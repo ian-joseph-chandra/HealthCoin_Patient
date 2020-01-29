@@ -1,0 +1,57 @@
+.login-box {
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 0 rgba(181, 181, 181, .7);
+  width: 360px;
+  right: 10px;
+  min-height: 550px;
+  z-index: 1;
+  padding: 0 5px;
+  border-top: 1px solid #f1f1f5;
+  font-family: Arial, monospace;
+}
+
+.header-text {
+  text-align: center;
+  margin-top: .82353rem;
+  font-size: 1.17647rem;
+}
+
+.user-pass-input-box {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.input-fill {
+  border-width: 0 0 1px 0;
+  height: 37px;
+  width: 75%;
+  margin: 4px 0;
+  padding: 16px 0 4px;
+  font-size: 16px
+}
+
+.forgot-password-hyperlink {
+  font-size: 14px;
+  margin: 5px 12.5%;
+  float: right;
+  color: #188FFF;
+}
+
+.login-button {
+  text-align: center;
+  border-radius: 50px;
+  width: 100px;
+  height: 100%;
+  background-color: #188FFF;
+  color: white;
+  border: none;
+}
+
+.login-button-box {
+  margin-top: 50px;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+

@@ -1,0 +1,43 @@
+import {Component, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+
+  usernameDatabase = 'lauren';
+  emailDatabase = 'lauren@gmail.com';
+  passwordDatabase = 'lauren123';
+
+  inputUserOrEmail = '';
+  inputPass = '';
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  getInputUser() {
+    // @ts-ignore
+    this.inputUserOrEmail = document.getElementById('username').value;
+    // @ts-ignore
+    this.inputPass = document.getElementById('password').value;
+
+    console.log('username: ' + this.inputUserOrEmail + '\nPassword: ' + this.inputPass);
+}
+
+login() {
+  this.getInputUser();
+
+  if ((this.inputUserOrEmail === this.usernameDatabase || this.inputUserOrEmail === this.emailDatabase)
+    && this.inputPass === this.passwordDatabase) {
+    console.log('Login Success!');
+  } else {
+    console.log('Login failed!');
+  }
+
+}
+}
