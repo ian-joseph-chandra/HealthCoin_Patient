@@ -1,11 +1,10 @@
 .login-box {
   box-sizing: border-box;
   box-shadow: 0 2px 4px 0 rgba(181, 181, 181, .7);
-  width: 360px;
+  width: 100%;
   right: 10px;
-  min-height: 550px;
+  min-height: 100%;
   z-index: 1;
-  padding: 0 5px;
   border-top: 1px solid #f1f1f5;
   font-family: Arial, monospace;
 }
