@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +15,21 @@ export class LoginComponent implements OnInit {
   inputUserOrEmail = '';
   inputPass = '';
 
+  // Variable for screen size
+  screenHeight: number;
+  screenWidth: number;
+
   constructor() {
+    this.getScreenSize();
   }
 
   ngOnInit() {
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
   }
 
   getInputUser() {

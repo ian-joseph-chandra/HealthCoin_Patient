@@ -1,3 +1,5 @@
+<body [style.height.px]="screenHeight" [style.width.px]="screenWidth">
+
 <div class="login-box">
   <div class="header-text">
     <Strong>HealthCoin</Strong>
@@ -18,11 +20,8 @@
     <label><a href="https://www.google.com/" target="_self">Forgot Password?</a></label>
   </div>
 
-  <html lang="id" class="forgot-password-hyperlink" style="cursor: pointer">
-
-  </html>
-
   <div class="login-button-box">
     <button type="submit" (click)="login()" class="login-button">Login</button>
   </div>
 </div>
+</body>
