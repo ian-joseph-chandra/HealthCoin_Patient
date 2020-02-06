@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
-=======
-import {Component, OnInit} from '@angular/core';
->>>>>>> dbca634423990aa5610ac950f2ac14d5a0640d4f
+
 
 @Component({
   selector: 'app-login',
@@ -11,9 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-=======
+
   usernameDatabase = 'lauren';
   emailDatabase = 'lauren@gmail.com';
   passwordDatabase = 'lauren123';
@@ -23,13 +18,10 @@ export class LoginComponent implements OnInit {
 
   constructor() {
   }
->>>>>>> dbca634423990aa5610ac950f2ac14d5a0640d4f
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-=======
   getInputUser() {
     // @ts-ignore
     this.inputUserOrEmail = document.getElementById('username').value;
@@ -50,5 +42,4 @@ login() {
   }
 
 }
->>>>>>> dbca634423990aa5610ac950f2ac14d5a0640d4f
 }
