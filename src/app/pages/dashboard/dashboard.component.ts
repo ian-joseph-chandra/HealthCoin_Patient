@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  screenHeight: number;
+  screenWidth: number;
+
+  constructor() {
+    this.getScreenSize();
+  }
 
   ngOnInit() {
   }
 
+  getScreenSize(){
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+  }
 }
