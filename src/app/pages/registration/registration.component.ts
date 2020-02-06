@@ -2,12 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import { HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
 export class LoginComponent implements OnInit {
-
 
   usernameDatabase = 'lauren';
   emailDatabase = 'lauren@gmail.com';

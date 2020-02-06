@@ -1,4 +1,4 @@
-<body>
+<body [style.height.px]="screenHeight" [style.width.px]="screenWidth">
 
 <div class="login-box">
   <div class="header-text">
@@ -17,14 +17,12 @@
   </div>
 
   <div role="button" class="forgot-password-hyperlink">
-    <label>Forgot Password?</label>
+    <label><a href="https://www.google.com/" target="_self">Forgot Password?</a></label>
   </div>
 
   <div class="login-button-box">
     <button type="submit" (click)="login()" class="login-button">Login</button>
   </div>
-
 </div>
-
 </body>
 
