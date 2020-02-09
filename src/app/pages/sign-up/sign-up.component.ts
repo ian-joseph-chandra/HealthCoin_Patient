@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  screenHeight: number;
+  screenWidth: number;
+
+  constructor() {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+  }
 
   ngOnInit() {
   }
