@@ -1,13 +1,16 @@
-<div class=".menu">
+<body [style.minHeight.px]="screenHeight" [style.width.px]="screenWidth">
 
-  <div>
-    <input type="text" value="default value">
+<div class="menu" [style.top.px]="screenHeight-40">
 
-
-  </div>
-
-  <div>
-    <input type="text" value="default value">
+  <div class="button-group">
+    <button>Riwayat Akun</button>
+    <button>Akses Rekam Medis</button>
+    <button>Akun Saya</button>
   </div>
 
 </div>
+</body>
+
+
+
+
