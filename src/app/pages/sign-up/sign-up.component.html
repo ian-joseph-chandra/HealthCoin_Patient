@@ -1,11 +1,9 @@
-<body [style.height.px]="screenHeight">
+<body [style.height.px]="screenHeight" [style.width.px]="screenWidth">
 
-<div class="signup-box">
-  <div class="header-text">
-    <Strong>HealthCoin</Strong>
-  </div>
-  <div class="header-text">Create Your Account!
-  </div>
+<div class="header-text"> H E A L T H C O I N </div>
+<div class="sign-up-box">
+
+  <div class="header-text">Create Your Account!</div>
 
   <div class="name-email-pass-input-box">
     <div>
@@ -19,7 +17,7 @@
     <div>
       <input class="input-fill" type="text" placeholder="Email" id="email" required>
     </div>
-   
+
     <div>
       <input class="input-fill" type="text" placeholder="Nomor Telepon" id="phone" required>
     </div>
@@ -44,7 +42,7 @@
       <button type="submit" (click)="signup()" class="sign-up-button">Sign Up</button>
     </div>
 
-  
+
   </div>
 
 </div>

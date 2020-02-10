@@ -1,3 +1,12 @@
+.header-text {
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: "Roboto Light", sans-serif;
+}
+
 .sign-up-box {
   background: #fff;
   direction: ltr;
@@ -5,13 +14,6 @@
   line-height: 1.4286;
   margin: 0;
   padding: 0;
-}
-
-.header-text {
-  text-align: center;
-  margin-top: .82353rem;
-  font-size: 1.17647rem;
-  font-family: Arial, monospace;
 }
 
 .name-email-pass-input-box {
@@ -22,13 +24,10 @@
 .input-fill {
   height: 37px;
   width: 75%;
-  margin: 4px 0;
+  margin: 10px 0 0;
   padding: 16px 16px 16px 40px;
-  font-size: 16px;
-  font-weight: bold;
   border-radius: 50px;
   border: aqua 2px solid;
-
 }
 
 .password-box {
