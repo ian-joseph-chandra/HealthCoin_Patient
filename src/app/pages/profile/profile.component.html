@@ -1,61 +1,55 @@
-<body [style.minHeight.px]="screenHeight" [style.width.px]="screenWidth">
+<body [style.height.px]="screenHeight" [style.width.px]="screenWidth">
 
-<div class="background-header">
+<div class="profile-header">
   <div class="healthcoin-text">HealthCoin</div>
 
   <div class="profile-text">
     <strong>Profile</strong>
   </div>
-
 </div>
 
-
-<div class="profile-header">
-<span class="menu-button">
-<i class="fa fa-user-circle"></i>
+<div class="profile-content-1">
+  <span class="profile-picture">
+    <i class="fa fa-user-circle"></i>
   </span>
 
-    <span class="profile-name">Evelyn</span>
+  <span class="profile-name">Evelyn</span>
+  <span class="profile-gender"></span>
 </div>
 
-  <div class="profile-content">
-    <div>
-      <span class="profile-content-text">Username</span>
-      <span>Evelyn</span>
-    </div>
-
-    <div>
-      <span class="profile-content-text">Email</span>
-      <span>evelyn82@ui.ac.id</span>
-    </div>
-
-    <div>
-      <span>Nomor Telepon</span>
-      <span>085217750115</span>
-    </div>
-
-    <div>
-      <span>Password</span>
-      <span> <input class="input-fill" type="password" placeholder="Password" id="password"> </span>
-    </div>
-
-    <div>
-      <span>Nomor KTP</span>
-      <span>Evelyn247</span>
-    </div>
-
-    <div>
-      <span>Tanggal Lahir</span>
-      <span>24 April 2001</span>
-    </div>
+<div class="profile-content-2">
+  <div>
+    <span class="profile-content-text">Username</span>
+    <span>Evelyn</span>
   </div>
 
+  <div>
+    <span class="profile-content-text">Email</span>
+    <span>evelyn82@ui.ac.id</span>
+  </div>
 
+  <div>
+    <span>Nomor Telepon</span>
+    <span>085217750115</span>
+  </div>
 
+  <div>
+    <span>Password</span>
+    <span> <input class="input-fill" id="password" placeholder="Password" type="password"> </span>
+  </div>
 
+  <div>
+    <span>Nomor KTP</span>
+    <span>Evelyn247</span>
+  </div>
 
-<div class="menu" [style.top.px]="screenHeight-60">
+  <div>
+    <span>Tanggal Lahir</span>
+    <span>24 April 2001</span>
+  </div>
+</div>
 
+<div [style.top.px]="screenHeight-60" class="menu">
   <span class="menu-button">
     <i class="fa fa-home"></i>
   </span>
@@ -65,16 +59,12 @@
   </span>
 
   <span class="menu-button">
-<i class="fa fa-history"></i>
+    <i class="fa fa-history"></i>
   </span>
 
   <span class="menu-button">
-<i class="fa fa-user-circle"></i>
+    <i class="fa fa-user-circle"></i>
   </span>
-
-
 </div>
 
 </body>
-
-
