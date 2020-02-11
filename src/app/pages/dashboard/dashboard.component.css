@@ -18,21 +18,3 @@
 .menu-icon {
   vertical-align: middle;
 }
-/*.button-group button {
-  background-color: #4CAF50;
-  border: 1px solid green;
-  color: white;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: left;
-}
-
-.button-group:after {
-  content: "";
-  clear: bottom;
-  display: table;
-}
-
-.button-group button:hover {
-  background-color: #3e8e41;
-}*/

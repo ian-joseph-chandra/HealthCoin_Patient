@@ -1,0 +1,54 @@
+.background-header {
+background: mediumturquoise;
+  height: 100px;
+}
+
+
+.healthcoin-text, .profile-text {
+  text-align: center;
+  top: 5%;
+  font-size: 1.17647rem;
+}
+
+.healthcoin-text {
+  color: white;
+}
+
+.profile-header {
+background: azure;
+
+}
+
+.profile-icon {
+
+}
+
+
+.profile-content {
+  border-width: 0 0 1px 0;
+}
+
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-button {
+  width: 25%;
+  height: 100%;
+  color: #32C8D7;
+  text-align: center;
+  font-size: 40px;
+}
+
+.menu-icon {
+  vertical-align: middle;
+}
+
+.profile-content-text {
+  width: 90px;
+}

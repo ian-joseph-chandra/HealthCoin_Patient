@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -14,7 +15,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
