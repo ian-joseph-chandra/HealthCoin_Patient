@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HostListener} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +10,9 @@ import {HostListener} from '@angular/core';
 export class LoginComponent implements OnInit {
 
 
-  usernameDatabase = 'lauren';
-  emailDatabase = 'lauren@gmail.com';
-  passwordDatabase = 'lauren123';
+  usernameDatabase = 'asdf';
+  emailDatabase = 'asdf@gmail.com';
+  passwordDatabase = 'asdf123';
 
   inputUserOrEmail = '';
   inputPass = '';
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   screenHeight: number;
   screenWidth: number;
 
-  constructor() {
+  constructor(private router: Router) {
     this.getScreenSize();
   }
 
@@ -37,20 +38,22 @@ export class LoginComponent implements OnInit {
     this.inputUserOrEmail = document.getElementById('username').value;
     // @ts-ignore
     this.inputPass = document.getElementById('password').value;
-
-    console.log('username: ' + this.inputUserOrEmail + '\nPassword: ' + this.inputPass);
   }
 
   login() {
     this.getInputUser();
 
-    if ((this.inputUserOrEmail === this.usernameDatabase || this.inputUserOrEmail === this.emailDatabase)
+    if (this.inputUserOrEmail === '' || this.inputPass === '') {
+      console.log('Email atau password kosong!');
+    } else if ((this.inputUserOrEmail === this.usernameDatabase || this.inputUserOrEmail === this.emailDatabase)
       && this.inputPass === this.passwordDatabase) {
-      console.log('Login Success!');
+      this.goToDashboardPage();
     } else {
       console.log('Login failed!');
     }
-
   }
-  
+
+  goToDashboardPage() {
+    this.router.navigate(['dashboard']);
+  }
 }

@@ -1,27 +1,32 @@
 <body [style.height.px]="screenHeight" [style.width.px]="screenWidth">
 
 <div class="login-box">
-  <div class="header-text">
-    <Strong>HealthCoin</Strong>
-  </div>
-  <div class="header-text">Login</div>
+  <div class="header-text">H E A L T H C O I N</div>
+  <div class="welcome-text">Selamat Datang!</div>
 
   <div class="user-pass-input-box">
-    <div>
-      <input class="input-fill" type="text" placeholder="Email or Username" id="username" required>
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <input class="input-fill" type="text" placeholder="Email atau Username" id="username" required>
     </div>
 
-    <div>
-      <input class="input-fill" type="password" placeholder="Password" id="password" required>
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-key"></i>
+      </span>
+      <input class="input-fill" type="password" placeholder="Kata Sandi" id="password" required>
     </div>
   </div>
 
   <div role="button" class="forgot-password-hyperlink">
-    Don't have account?<label><a href="sign-up" target="_self"> Sign Up</a></label>
+    <span style="color: black"> Belum memiliki akun? </span>
+    <label><a href="sign-up" target="_self"> Daftar</a></label>
   </div>
 
   <div class="login-button-box">
-    <button type="submit" (click)="login()" class="login-button">Login</button>
+    <button type="submit" (click)="login()" class="login-button">Masuk</button>
   </div>
 </div>
 </body>

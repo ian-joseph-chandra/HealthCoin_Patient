@@ -8,7 +8,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
