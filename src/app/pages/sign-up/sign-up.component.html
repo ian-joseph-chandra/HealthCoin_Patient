@@ -1,45 +1,68 @@
 <body [style.height.px]="screenHeight" [style.width.px]="screenWidth">
 
-<div class="header-text"> H E A L T H C O I N </div>
+<div class="header-text">H E A L T H C O I N</div>
 <div class="sign-up-box">
 
-  <div class="header-text">Create Your Account!</div>
-
   <div class="name-email-pass-input-box">
-    <div>
+    <div class="create-text">Buat Akun Anda!</div>
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-user"></i>
+      </span>
       <input class="input-fill" type="text" placeholder="Nama Depan" id="first-name" required>
     </div>
 
-    <div>
-      <input class="input-fill" type="text" placeholder="Nama Belakang" id="last-name" required>
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-user"></i>
+      </span>
+      <input class="input-fill" type="text" placeholder="Nama Belakang" id="last-name">
     </div>
 
-    <div>
-      <input class="input-fill" type="text" placeholder="Email" id="email" required>
-    </div>
-
-    <div>
-      <input class="input-fill" type="text" placeholder="Nomor Telepon" id="phone" required>
-    </div>
-
-    <div>
-      <input class="input-fill" type="password" placeholder="Kata Sandi" id="password" required>
-    </div>
-
-    <div>
-      <input class="input-fill" type="password" placeholder="Konfirmasi Kata Sandi" id="confirm" required>
-    </div>
-
-    <div>
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-calendar"></i>
+      </span>
       <input class="input-fill" type="date" placeholder="dd/mm/yy" id="birthday" required>
     </div>
 
-    <div>
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <input class="input-fill" type="text" placeholder="Email" id="email" required>
+    </div>
+
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-phone"></i>
+      </span>
+      <input class="input-fill" type="text" placeholder="Nomor Telepon" id="phone" required>
+    </div>
+
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-key"></i>
+      </span>
+      <input class="input-fill" type="password" placeholder="Kata Sandi" id="password" required>
+    </div>
+
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-key"></i>
+      </span>
+      <input class="input-fill" type="password" placeholder="Konfirmasi Kata Sandi" id="confirm" required>
+    </div>
+
+    <div class="input-box">
+      <span class="icon-input">
+        <i class="fa fa-id-card"></i>
+      </span>
       <input class="input-fill" type="text" placeholder="No KTP" id="id-number" required>
     </div>
 
     <div class="sign-up-box">
-      <button type="submit" (click)="signup()" class="sign-up-button">Sign Up</button>
+      <button type="submit" (click)="signup()" class="sign-up-button">Daftar</button>
     </div>
 
 

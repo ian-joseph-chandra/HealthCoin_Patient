@@ -17,18 +17,43 @@
   font-size: 1.17647rem;
 }
 
+.welcome-text {
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
+  font-family: "Roboto Light", sans-serif;
+  color: #59b7d3;
+  font-weight: bold;
+}
+
 .user-pass-input-box {
   margin-top: 100px;
   text-align: center;
 }
 
-.input-fill {
-  border-width: 0 0 1px 0;
-  height: 37px;
+.input-box {
+  margin-left: auto;
+  margin-right: auto;
   width: 75%;
-  margin: 4px 0;
-  padding: 16px 0 4px;
-  font-size: 16px
+  border-radius: 50px;
+  border: 1px solid;
+  margin-top: 10px;
+}
+
+.icon-input {
+  width: 20%;
+  font-size: 20px;
+  color: rgb(79, 208, 221);
+  margin-left: -10px;
+}
+
+.input-fill {
+  height: 20px;
+  width: 80%;
+  padding: 16px 16px 16px 10px;
+  border: none;
 }
 
 .forgot-password-hyperlink {
@@ -41,11 +66,13 @@
 .login-button {
   text-align: center;
   border-radius: 50px;
-  width: 100px;
-  height: 100%;
-  background-color: #188FFF;
+  height: 30px;
+  width: 60%;
+  background-color: #00bcd4;
   color: white;
   border: none;
+  margin: 30px 0;
+  font-size: 14px;
 }
 
 .login-button-box {
@@ -53,6 +80,22 @@
   height: 40px;
   width: 100%;
   text-align: center;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+::placeholder {
+  opacity: 50%;
+}
+
+input[type="date"]::-webkit-input-placeholder{
+  opacity: 50%;
 }
 
 
