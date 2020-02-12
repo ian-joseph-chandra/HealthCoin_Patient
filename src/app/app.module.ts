@@ -7,6 +7,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UserRecoveryComponent } from './pages/user-recovery/user-recovery.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     DashboardComponent,
     LoginComponent,
     SignUpComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserRecoveryComponent
   ],
   imports: [
     BrowserModule,

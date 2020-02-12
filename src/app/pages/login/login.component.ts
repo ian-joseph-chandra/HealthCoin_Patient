@@ -17,20 +17,10 @@ export class LoginComponent implements OnInit {
   inputUserOrEmail = '';
   inputPass = '';
 
-  // Variable for screen size
-  screenHeight: number;
-  screenWidth: number;
-
   constructor(private router: Router) {
-    this.getScreenSize();
   }
 
   ngOnInit() {
-  }
-
-  getScreenSize() {
-    this.screenHeight = window.innerHeight;
-    this.screenWidth = window.innerWidth;
   }
 
   getInputUser() {
