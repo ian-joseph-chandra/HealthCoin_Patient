@@ -1,7 +1,7 @@
 <body class="adjust-screen">
 
 <div class="login-box">
-  <div class="header-text">H E A L T H C O I N</div>
+  <div class="healthcoin-text">H E A L T H C O I N</div>
   <div class="welcome-text">Selamat Datang!</div>
 
   <div class="user-pass-input-box">
@@ -20,14 +20,18 @@
     </div>
   </div>
 
-  <div role="button" class="forgot-password-hyperlink">
-    <span style="color: black"> Belum memiliki akun? </span>
-    <label><a href="sign-up" target="_self"> Daftar</a></label>
+  <div role="button" class="user-recovery-hyperlink">
+    <label><a href="user-recovery" target="_self"> Lupa kata sandi?</a></label>
   </div>
 
   <div class="login-button-box">
     <button type="submit" (click)="login()" class="login-button">Masuk</button>
   </div>
+</div>
+
+<div class="sign-up">
+  <span style="color: black"> Belum memiliki akun? </span>
+  <label><a href="sign-up" target="_self"> Daftar</a></label>
 </div>
 </body>
 

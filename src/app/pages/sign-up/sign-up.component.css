@@ -1,10 +1,9 @@
-.header-text {
-  height: 20px;
+.healthcoin-text {
+  position: relative;
+  height: auto;
   width: 100%;
   text-align: center;
-  margin-top: 40px;
-  font-size: 20px;
-  font-family: "Roboto Light", sans-serif;
+  font-size: 3vh;
 }
 
 .create-text {
@@ -38,17 +37,17 @@
 }
 
 .icon-input {
-  width: 20%;
-  font-size: 20px;
+  width: 10%;
+  float: left;
+  font-size: 2.75vw;
   color: rgb(79, 208, 221);
-  margin-left: -10px;
+  margin-left: 2%;
 }
 
 .input-fill {
-  height: 20px;
   width: 80%;
-  padding: 16px 16px 16px 10px;
   border: none;
+  font-size: 2.75vw;
 }
 
 .password-box {
@@ -72,13 +71,11 @@
 .sign-up-button {
   text-align: center;
   border-radius: 50px;
-  height: 30px;
   width: 60%;
   background-color: #00bcd4;
   color: white;
   border: none;
-  margin: 30px 0;
-  font-size: 14px;
+  font-size: 2.75vh;
 }
 
 
