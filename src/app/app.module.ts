@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UserRecoveryComponent } from './pages/user-recovery/user-recovery.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UserRecoveryComponent } from './pages/user-recovery/user-recovery.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
