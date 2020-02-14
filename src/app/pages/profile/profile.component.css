@@ -38,7 +38,7 @@ position: relative;
 .profile-name {
   width: 55%;
   font-size: 2vh;
-  text-align: center;
+  text-align: left;
   text-justify: auto;
   padding-top: 30px;
 }

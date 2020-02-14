@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HostListener} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -10,11 +9,10 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
 
-  usernameDatabase = 'asdf';
   emailDatabase = 'asdf@gmail.com';
   passwordDatabase = 'asdf123';
 
-  inputUserOrEmail = '';
+  inputEmail = '';
   inputPass = '';
 
   constructor(private router: Router) {
@@ -23,24 +21,25 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  getInputUser() {
-    // @ts-ignore
-    this.inputUserOrEmail = document.getElementById('username').value;
-    // @ts-ignore
-    this.inputPass = document.getElementById('password').value;
-  }
 
   login() {
     this.getInputUser();
 
-    if (this.inputUserOrEmail === '' || this.inputPass === '') {
+    if (this.inputEmail === '' || this.inputPass === '') {
       console.log('Email atau password kosong!');
-    } else if ((this.inputUserOrEmail === this.usernameDatabase || this.inputUserOrEmail === this.emailDatabase)
+    } else if ( this.inputEmail === this.emailDatabase
       && this.inputPass === this.passwordDatabase) {
       this.goToDashboardPage();
     } else {
       console.log('Login failed!');
     }
+  }
+
+  getInputUser() {
+    // @ts-ignore
+    this.inputEmail = document.getElementById('username').value;
+    // @ts-ignore
+    this.inputPass = document.getElementById('password').value;
   }
 
   goToDashboardPage() {

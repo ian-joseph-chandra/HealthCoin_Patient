@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,50 +8,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  usernameDatabase = 'lauren';
-  emailDatabase = 'lauren@gmail.com';
-  passwordDatabase = 'lauren123';
-  confirmDatabase = 'lauren123';
-
-  inputUserOrEmail = '';
+  inputFirstName = '';
+  inputLastName = '';
+  inputBirthDate = '';
+  inputEmail = '';
+  inputPhoneNumber = '';
   inputPass = '';
-  inputConfirm = '';
+  inputPassConfirm = '';
+  inputUserID = '';
 
-  screenHeight: number;
-  screenWidth: number;
-
-  constructor() {
-    this.screenHeight = window.innerHeight;
-    this.screenWidth = window.innerWidth;
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
   }
 
-  getScreenSize() {
-    this.screenHeight = window.innerHeight;
-    this.screenWidth = window.innerWidth;
-  }
+  signUp() {
+    this.getInputUser();
 
-  getSignUpUser() {
-    // @ts-ignore
-    this.inputUserOrEmail = document.getElementById('username').value;
-    // @ts-ignore
-    this.inputPass = document.getElementById('password').value;
-    // @ts-ignore
-    this.inputConfirm = document.getElementById('password').value;
-
-
-    console.log('username: ' + this.inputUserOrEmail + '\nPassword: ' + this.inputPass + '\nPassword: ' + this.inputConfirm);
-  }
-
-  signup() {
-    this.getSignUpUser();
-
-    if ((this.inputPass === this.inputConfirm)) {
-      console.log('Sign-Up Success!');
+    if (this.inputFirstName === '' ||
+      this.inputBirthDate === '' ||
+      this.inputEmail === '' ||
+      this.inputPhoneNumber === '' ||
+      this.inputPass === '' ||
+      this.inputPassConfirm === '' ||
+      this.inputUserID === '') {
+      console.log('Kolom yang wajib ada yang kosong!');
+    } else if (this.inputPass !== this.inputPassConfirm) {
+      console.log('Konfirmasi password tidak sesuai!');
     } else {
-      console.log('Please check your confirm password!')
+      console.log('Sign-up berhasil !');
+      this.goToLoginPage();
     }
+  }
+
+  getInputUser() {
+    // @ts-ignore
+    this.inputFirstName = document.getElementById('first-name').value;
+    // @ts-ignore
+    this.inputLastName = document.getElementById('last-name').value;
+    // @ts-ignore
+    this.inputBirthDate = document.getElementById('birthday').value;
+    // @ts-ignore
+    this.inputEmail = document.getElementById('email').value;
+    // @ts-ignore
+    this.inputPhoneNumber = document.getElementById('phone').value;
+    // @ts-ignore
+    this.inputPass = document.getElementById('pass').value;
+    // @ts-ignore
+    this.inputPassConfirm = document.getElementById('pass-confirm').value;
+    // @ts-ignore
+    this.inputUserID = document.getElementById('id-number').value;
+  }
+
+  goToLoginPage() {
+    this.router.navigate(['login']);
   }
 }
