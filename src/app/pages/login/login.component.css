@@ -40,18 +40,20 @@
   font-size: 2.5vh;
 }
 
-.icon-input {
+.input-icon {
   width: 10%;
   float: left;
-  font-size: 2.75vw;
+  font-size: 3vh;
   color: rgb(79, 208, 221);
   margin-left: 2%;
 }
 
 .input-fill {
   width: 80%;
+  height: 4vh;
   border: none;
-  font-size: 2.75vw;
+  margin-top: 0.5vh;
+  font-size: 3vh;
 }
 
 .user-recovery-hyperlink {
@@ -78,6 +80,7 @@
   color: white;
   border: none;
   font-size: 2.75vh;
+  margin: 30px;
 }
 
 .login-button-box {
