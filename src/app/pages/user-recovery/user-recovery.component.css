@@ -1,0 +1,87 @@
+.recovery-box {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  top: 20%;
+  font-family: Arial, monospace;
+  text-align: center;
+}
+
+.healthcoin-text {
+  position: relative;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 3vh;
+  margin-top: 40px;
+}
+
+.email-text {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2.8vh;
+  font-family: "Roboto Light", sans-serif;
+  color: #59b7d3;
+  font-weight: bold;
+}
+
+.user-pass-input-box {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.input-box {
+  width: 75%;
+  height: 5vh;
+  margin: 0 auto 1vh auto;
+  border-radius: 50px;
+  border: 1px solid;
+  font-size: 2.5vh;
+}
+
+.input-icon {
+  width: 10%;
+  float: left;
+  font-size: 3vh;
+  color: rgb(79, 208, 221);
+  margin-left: 2%;
+}
+
+.input-fill {
+  width: 80%;
+  height: 4vh;
+  border: none;
+  margin-top: 0.5vh;
+  font-size: 3vh;
+}
+
+.recovery-button {
+  text-align: center;
+  border-radius: 50px;
+  width: 60%;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  font-size: 2.75vh;
+  margin: 30px;
+}
+
+.recovery-button-box {
+  margin-top: 50px;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+::placeholder {
+  opacity: 50%;
+}

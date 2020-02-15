@@ -4,6 +4,7 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {LoginComponent} from './pages/login/login.component';
 import {SignUpComponent} from './pages/sign-up/sign-up.component';
 import {ProfileComponent} from './pages/profile/profile.component';
+import {UserRecoveryComponent} from './pages/user-recovery/user-recovery.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'sign-up', component: SignUpComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'user-recovery', component: UserRecoveryComponent}
 ];
 
 @NgModule({
