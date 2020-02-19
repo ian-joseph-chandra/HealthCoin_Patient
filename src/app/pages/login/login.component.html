@@ -1,6 +1,6 @@
 <body class="adjust-screen">
 
-<div class="login-box">
+<div class="login-box" [style.minHeight.px]='screenHeight*0.8'>
   <div class="healthcoin-text">H E A L T H C O I N</div>
   <div class="welcome-text">Selamat Datang!</div>
 
@@ -9,29 +9,33 @@
       <span class="input-icon">
         <i class="fa fa-envelope"></i>
       </span>
-      <input class="input-fill" type="text" placeholder="Email" id="username" required>
+      <input class="email-fill" type="email" placeholder="Email" id="username" required>
     </div>
 
     <div class="input-box">
       <span class="input-icon">
         <i class="fa fa-key"></i>
       </span>
-      <input class="input-fill" type="password" placeholder="Kata Sandi" id="password" required>
+      <input class="pass-fill" type="password" placeholder="Kata Sandi" id="password" required>
+      <span *ngIf="showPassword == false" (click)="showPasswordToggle()" class="pass-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span *ngIf="showPassword == true" (click)="showPasswordToggle()" class="pass-icon">
+        <i class="fa fa-eye-slash"></i>
+      </span>
     </div>
   </div>
 
-  <div role="button" class="user-recovery-hyperlink">
-    <label><a href="user-recovery" target="_self"> Lupa kata sandi?</a></label>
-  </div>
+  <div role="button" class="user-recovery-hyperlink" (click)="goToUserRecovery()">Lupa kata sandi?</div>
 
-  <div class="login-button-box">
-    <button type="submit" (click)="login()" class="login-button">Masuk</button>
+  <button type="submit" (click)="login()" class="login-button">Masuk</button>
+
+
+  <div class="sign-up">
+    <span style="color: black"> Belum memiliki akun? </span>
+    <span (click)="goToSignUp()">Daftar</span>
   </div>
 </div>
 
-<div class="sign-up">
-  <span style="color: black"> Belum memiliki akun? </span>
-  <label><a href="sign-up" target="_self"> Daftar</a></label>
-</div>
 </body>
 
