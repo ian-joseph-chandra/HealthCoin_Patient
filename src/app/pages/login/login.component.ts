@@ -25,11 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.getInputUser();
-
-    if (this.inputEmail === '' || this.inputPass === '') {
-      console.log('Email atau password kosong!');
-    } else if (this.inputEmail === this.emailDatabase
+    if (this.inputEmail === this.emailDatabase
       && this.inputPass === this.passwordDatabase) {
       this.goToDashboardPage();
     } else {
@@ -37,16 +33,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  getInputUser() {
-    // @ts-ignore
-    this.inputEmail = document.getElementById('username').value;
-    // @ts-ignore
-    this.inputPass = document.getElementById('password').value;
-  }
-
   showPasswordToggle(): void {
     this.showPassword = !this.showPassword;
-
     const passFillType = document.getElementById('password');
 
     if (this.showPassword) {

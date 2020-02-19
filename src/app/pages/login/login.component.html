@@ -1,41 +1,50 @@
 <body class="adjust-screen">
 
-<div class="login-box" [style.minHeight.px]='screenHeight*0.8'>
+<form class="login-box">
   <div class="healthcoin-text">H E A L T H C O I N</div>
+
   <div class="welcome-text">Selamat Datang!</div>
 
   <div class="user-pass-input-box">
     <div class="input-box">
-      <span class="input-icon">
-        <i class="fa fa-envelope"></i>
-      </span>
-      <input class="email-fill" type="email" placeholder="Email" id="username" required>
+        <span class="input-icon">
+          <i class="fa fa-envelope"></i>
+        </span>
+
+      <label>
+        <input class="email-fill" type="email" placeholder="Email" [(ngModel)]="inputEmail" name="email">
+      </label>
     </div>
 
     <div class="input-box">
-      <span class="input-icon">
-        <i class="fa fa-key"></i>
-      </span>
-      <input class="pass-fill" type="password" placeholder="Kata Sandi" id="password" required>
-      <span *ngIf="showPassword == false" (click)="showPasswordToggle()" class="pass-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span *ngIf="showPassword == true" (click)="showPasswordToggle()" class="pass-icon">
-        <i class="fa fa-eye-slash"></i>
-      </span>
+        <span class="input-icon">
+          <i class="fa fa-key"></i>
+        </span>
+
+      <label>
+        <input class="pass-fill" type="password" placeholder="Kata Sandi" [(ngModel)]="inputPass" id="password"
+               name="password">
+      </label>
+
+      <span *ngIf="showPassword == false && inputPass !== ''" (click)="showPasswordToggle()" class="pass-icon">
+          <i class="fa fa-eye"></i>
+        </span>
+      <span *ngIf="showPassword == true && inputPass !== ''" (click)="showPasswordToggle()" class="pass-icon">
+          <i class="fa fa-eye-slash"></i>
+        </span>
     </div>
   </div>
 
   <div role="button" class="user-recovery-hyperlink" (click)="goToUserRecovery()">Lupa kata sandi?</div>
 
-  <button type="submit" (click)="login()" class="login-button">Masuk</button>
-
+  <button type="submit" [disabled]="inputEmail=='' || inputPass==''" (click)="login()" class="login-button">Masuk
+  </button>
 
   <div class="sign-up">
     <span style="color: black"> Belum memiliki akun? </span>
     <span (click)="goToSignUp()">Daftar</span>
   </div>
-</div>
+</form>
 
 </body>
 

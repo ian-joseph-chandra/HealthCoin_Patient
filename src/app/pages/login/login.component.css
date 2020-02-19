@@ -95,6 +95,10 @@
   margin: 15vw 20% 0 20%;
 }
 
+.login-button:disabled {
+  opacity: 30%;
+}
+
 .sign-up {
   width: 100%;
   font-size: 4.5vw;
@@ -115,9 +119,3 @@
 ::placeholder {
   opacity: 50%;
 }
-
-input[type="date"]::-webkit-input-placeholder {
-  opacity: 50%;
-}
-
-

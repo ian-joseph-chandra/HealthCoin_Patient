@@ -15,7 +15,7 @@ export class SignUpComponent implements OnInit {
   inputPhoneNumber = '';
   inputPass = '';
   inputPassConfirm = '';
-  inputUserID = '';
+  inputCitizenId = '';
 
   constructor(private router: Router) {
   }
@@ -24,15 +24,13 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    this.getInputUser();
-
     if (this.inputFirstName === '' ||
       this.inputBirthDate === '' ||
       this.inputEmail === '' ||
       this.inputPhoneNumber === '' ||
       this.inputPass === '' ||
       this.inputPassConfirm === '' ||
-      this.inputUserID === '') {
+      this.inputCitizenId === '') {
       console.log('Kolom yang wajib ada yang kosong!');
     } else if (this.inputPass !== this.inputPassConfirm) {
       console.log('Konfirmasi password tidak sesuai!');
@@ -40,25 +38,6 @@ export class SignUpComponent implements OnInit {
       console.log('Sign-up berhasil !');
       this.goToLoginPage();
     }
-  }
-
-  getInputUser() {
-    // @ts-ignore
-    this.inputFirstName = document.getElementById('first-name').value;
-    // @ts-ignore
-    this.inputLastName = document.getElementById('last-name').value;
-    // @ts-ignore
-    this.inputBirthDate = document.getElementById('birthday').value;
-    // @ts-ignore
-    this.inputEmail = document.getElementById('email').value;
-    // @ts-ignore
-    this.inputPhoneNumber = document.getElementById('phone').value;
-    // @ts-ignore
-    this.inputPass = document.getElementById('pass').value;
-    // @ts-ignore
-    this.inputPassConfirm = document.getElementById('pass-confirm').value;
-    // @ts-ignore
-    this.inputUserID = document.getElementById('id-number').value;
   }
 
   goToLoginPage() {

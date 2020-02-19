@@ -85,6 +85,9 @@
   margin: 30px;
 }
 
+.sign-up-button:disabled {
+  opacity: 30%;
+}
 
 .initial-name, .last-name {
   margin-right: 16px;
