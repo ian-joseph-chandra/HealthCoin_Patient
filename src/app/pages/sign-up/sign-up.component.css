@@ -3,15 +3,15 @@
   height: auto;
   width: 100%;
   text-align: center;
-  font-size: 3vh;
-  margin-top: 40px;
+  font-size: 7vw;
 }
 
 .create-text {
+  position: relative;
   width: 100%;
   text-align: center;
   margin-top: 40px;
-  font-size: 2.8vh;
+  font-size: 6vw;
   font-family: "Roboto Light", sans-serif;
   color: #59b7d3;
   font-weight: bold;
@@ -27,33 +27,37 @@
 }
 
 .name-email-pass-input-box {
-  margin-top: 15%;
+  position: relative;
+  margin-top: 100px;
   text-align: center;
+  height:104vw;
 }
 
 .input-box {
   width: 75%;
-  height: 5vh;
-  margin: 0 auto 1vh auto;
+  height: 10vw;
+  margin: 0 auto 3vw auto;
   border-radius: 50px;
   border: 1px solid;
-  font-size: 2.5vh;
 }
 
 .input-icon {
   width: 10%;
   float: left;
-  font-size: 3vh;
+  font-size: 6.5vw;
   color: rgb(79, 208, 221);
-  margin-left: 2%;
+  margin-left: 5%;
 }
 
 .input-fill {
-  width: 80%;
-  height: 4vh;
+  width: 75%;
+  height: 7.5vw;
   border: none;
-  margin-top: 0.5vh;
-  font-size: 3vh;
+  font-size: 5.5vw;
+  position: relative;
+  float: left;
+  margin-left: 5%;
+  top: 1vw;
 }
 
 .password-box {
@@ -81,8 +85,8 @@
   background-color: #00bcd4;
   color: white;
   border: none;
-  font-size: 2.75vh;
-  margin: 30px;
+  font-size: 7vw;
+  margin: 15vw 20% 0 20%;
 }
 
 .sign-up-button:disabled {
