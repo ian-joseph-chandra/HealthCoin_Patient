@@ -28,9 +28,9 @@
 
 .name-email-pass-input-box {
   position: relative;
-  margin-top: 100px;
+  margin-top: 10%;
   text-align: center;
-  height:104vw;
+  height: 104vw;
 }
 
 .input-box {
@@ -49,11 +49,21 @@
   margin-left: 5%;
 }
 
+.phone-area {
+  width: 15%;
+  font-size: 5vw;
+  color: dimgrey;
+  float: left;
+  margin-left: 5%;
+  position: relative;
+  top: 1.25vw;
+}
+
 .input-fill {
   width: 75%;
   height: 7.5vw;
   border: none;
-  font-size: 5.5vw;
+  font-size: 5vw;
   position: relative;
   float: left;
   margin-left: 5%;

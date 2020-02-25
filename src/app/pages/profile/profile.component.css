@@ -5,23 +5,28 @@
 }
 
 .healthcoin-text, .profile-text {
-  height: 30%;
+  height: 20%;
+  position: relative;
   width: auto;
   text-align: center;
-  padding-top: 25px;
   font-size: 3vh;
   font-family: arial, monospace;
 }
 
 .healthcoin-text {
+  top: 20%;
   color: white;
+}
+
+.profile-text {
+  top: 30%;
 }
 
 .profile-content-1 {
   width: 100%;
   height: 15%;
   background: azure;
-position: relative;
+  position: relative;
 }
 
 .profile-picture, .profile-name, .profile-gender {

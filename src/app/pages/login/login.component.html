@@ -1,10 +1,9 @@
-<body class="adjust-screen">
+<body class="adjust-screen" style="padding-top: 13%">
+
+<div class="healthcoin-text">H E A L T H C O I N</div>
+<div class="welcome-text">Selamat Datang!</div>
 
 <form class="login-box">
-  <div class="healthcoin-text">H E A L T H C O I N</div>
-
-  <div class="welcome-text">Selamat Datang!</div>
-
   <div class="user-pass-input-box">
     <div class="input-box">
         <span class="input-icon">
@@ -39,12 +38,12 @@
 
   <button type="submit" [disabled]="inputEmail=='' || inputPass==''" (click)="login()" class="login-button">Masuk
   </button>
-
-  <div class="sign-up">
-    <span style="color: black"> Belum memiliki akun? </span>
-    <span (click)="goToSignUp()">Daftar</span>
-  </div>
 </form>
+
+<div class="sign-up">
+  <span style="color: black"> Belum memiliki akun? </span>
+  <span (click)="goToSignUp()">Daftar</span>
+</div>
 
 </body>
 

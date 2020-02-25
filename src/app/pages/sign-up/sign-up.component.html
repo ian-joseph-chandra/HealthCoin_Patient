@@ -1,4 +1,4 @@
-<body class="adjust-screen">
+<body class="adjust-screen" style="padding-top: 13%">
 
 <div class="healthcoin-text">H E A L T H C O I N</div>
 <div class="create-text">Buat Akun Anda!</div>
@@ -38,7 +38,8 @@
       <span class="input-icon">
         <i class="fa fa-phone"></i>
       </span>
-      <input class="input-fill" type="text" placeholder="Nomor Telepon" [(ngModel)]="inputPhoneNumber"
+      <span class="phone-area">+62</span>
+      <input class="input-fill" style="width: 60%; margin-left: 0" type="number" placeholder="Nomor Telepon" [(ngModel)]="inputPhoneNumber"
              name="phone-number">
     </div>
 
@@ -61,7 +62,7 @@
       <span class="input-icon">
         <i class="fa fa-id-card"></i>
       </span>
-      <input class="input-fill" type="text" placeholder="No KTP" [(ngModel)]="inputCitizenId" name="citizen-id">
+      <input class="input-fill" type="number" placeholder="No KTP" [(ngModel)]="inputCitizenId" name="citizen-id">
     </div>
 
     <button type="submit"
