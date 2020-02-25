@@ -9,6 +9,7 @@ import {SignUpComponent} from './pages/sign-up/sign-up.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {UserRecoveryComponent} from './pages/user-recovery/user-recovery.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RecordListComponent } from './pages/record-list/record-list.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     LoginComponent,
     SignUpComponent,
     ProfileComponent,
-    UserRecoveryComponent
+    UserRecoveryComponent,
+    RecordListComponent,
   ],
   imports: [
     BrowserModule,
