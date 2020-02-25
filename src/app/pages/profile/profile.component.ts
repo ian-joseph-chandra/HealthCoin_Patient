@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,18 +9,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
-  screenHeight: number;
-  screenWidth: number;
-
-  constructor() {
-    this.getScreenSize();
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
   }
 
-  getScreenSize() {
-    this.screenHeight = window.innerHeight;
-    this.screenWidth = window.innerWidth;
+  goToDashboard() {
+    this.router.navigate(['dashboard']);
+  }
+
+  goToRecordList() {
+    this.router.navigate(['record-list']);
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-record-list',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecordListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
 
+  goToDashboard() {
+    this.router.navigate(['dashboard']);
+  }
+
+  goToProfile() {
+    this.router.navigate(['profile']);
+  }
 }

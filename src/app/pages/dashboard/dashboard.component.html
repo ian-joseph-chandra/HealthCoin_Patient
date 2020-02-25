@@ -1,24 +1,21 @@
-<body [style.minHeight.px]="screenHeight" [style.width.px]="screenWidth">
+<body class="adjust-screen">
 
-<div class="menu" [style.top.px]="screenHeight-60">
-
-  <span class="menu-button">
-    <i class="fa fa-home"></i>
+<div class="menu-box">
+  <span class="menu-button-on">
+    <i class="menu-icon, fa fa-home"></i>
   </span>
 
-  <span class="menu-button">
-    <i class="fa fa-calendar"></i>
+  <span class="menu-button-off">
+    <i class="menu-icon, fa fa-calendar"></i>
   </span>
 
-  <span class="menu-button">
-<i class="fa fa-history"></i>
+  <span class="menu-button-off" (click)="goToRecordList()">
+    <i class="menu-icon, fa fa-history"></i>
   </span>
 
-  <span class="menu-button">
-<i class="fa fa-user-circle"></i>
+  <span class="menu-button-off" (click)="goToProfile()">
+    <i class="menu-icon, fa fa-user-circle"></i>
   </span>
-
-
 </div>
 
 </body>

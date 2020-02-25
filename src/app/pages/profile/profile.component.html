@@ -1,11 +1,10 @@
-<!--<body [style.height.px]="screenHeight" [style.width.px]="screenWidth">-->
-<body style="height: 100vh; width: 100vw">
+<body class="adjust-screen">
 
 <div class="profile-header">
   <div class="healthcoin-text">H E A L T H C O I N</div>
 
   <div class="profile-text">
-    <strong>Profile</strong>
+    <strong>Profil</strong>
   </div>
 </div>
 
@@ -15,19 +14,9 @@
   </span>
 
   <span class="profile-name">Laurens Hendrika Oktaviani Ronadame</span>
-
-  <span class="profile-gender">
-    <i class="fa fa-mars"></i>
-  </span>
 </div>
 
 <div class="profile-content-2">
-  <div class="profile-content-2-section">
-    <span class="profile-content-2-ask">Username</span>
-    <span class="colon">:</span>
-    <span class="profile-content-2-info">Evelyn</span>
-  </div>
-
   <div class="profile-content-2-section">
     <span class="profile-content-2-ask">Email</span>
     <span class="colon">:</span>
@@ -53,20 +42,20 @@
   </div>
 </div>
 
-<div class="menu">
-  <span class="menu-button">
+<div class="menu-box">
+  <span class="menu-button-off" (click)="goToDashboard()">
     <i class="fa fa-home"></i>
   </span>
 
-  <span class="menu-button">
+  <span class="menu-button-off">
     <i class="fa fa-calendar"></i>
   </span>
 
-  <span class="menu-button">
+  <span class="menu-button-off" (click)="goToRecordList()">
     <i class="fa fa-history"></i>
   </span>
 
-  <span class="menu-button">
+  <span class="menu-button-on">
     <i class="fa fa-user-circle"></i>
   </span>
 </div>
