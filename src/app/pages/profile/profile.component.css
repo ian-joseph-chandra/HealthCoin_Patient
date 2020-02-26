@@ -9,7 +9,7 @@
   position: relative;
   width: auto;
   text-align: center;
-  font-size: 6.5vw;
+  font-size: 3vh;
   font-family: arial, monospace;
 }
 
@@ -24,29 +24,35 @@
 
 .profile-content-1 {
   width: 100%;
-  height: 12%;
+  height: 15%;
   background: azure;
   position: relative;
 }
 
-.profile-picture, .profile-name{
-  position: relative;
+.profile-picture, .profile-name, .profile-gender {
   height: 100%;
   float: left;
 }
 
 .profile-picture {
   width: 35%;
-  font-size: 20vw;
-  padding-left: 6vw;
-  margin-top: -3.5vw;
+  font-size: 9vh;
+  padding-left: 10vw;
 }
 
 .profile-name {
-  width: 65%;
-  font-size: 5vw;
+  width: 55%;
+  font-size: 2vh;
   text-align: left;
-  padding: 7vw 5vw 0 0;
+  text-justify: auto;
+  padding-top: 30px;
+}
+
+.profile-gender {
+  font-size: 4vh;
+  width: 10%;
+  vertical-align: middle;
+  padding-top: 30px;
 }
 
 .profile-content-2 {
@@ -83,3 +89,24 @@
   font-size: 2.5vh;
   padding: 2vh 7vh 0 2vh;
 }
+
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  display: flex;
+}
+
+.menu-button {
+  width: 25%;
+  height: 100%;
+  color: #32C8D7;
+  text-align: center;
+  font-size: 6vh;
+}
+
+.menu-icon {
+  vertical-align: middle;
+}
+
