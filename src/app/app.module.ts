@@ -10,6 +10,7 @@ import {ProfileComponent} from './pages/profile/profile.component';
 import {UserRecoveryComponent} from './pages/user-recovery/user-recovery.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RecordListComponent } from './pages/record-list/record-list.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { RecordListComponent } from './pages/record-list/record-list.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
