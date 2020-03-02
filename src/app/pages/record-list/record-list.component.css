@@ -5,11 +5,11 @@
 }
 
 .healthcoin-text, .list-text {
-  height: 20%;
+  height: auto;
   position: relative;
-  width: auto;
+  width: 100%;
   text-align: center;
-  font-size: 3vh;
+  font-size: 7vw;
   font-family: arial, monospace;
 }
 
@@ -71,4 +71,26 @@
 
 .menu-icon {
   vertical-align: middle;
+}
+
+.main-label {
+  border-width: 0px;
+  position: relative;
+  left: 10vw;
+  top: 3vw;
+  width: 80vw;
+  height: 30vw;
+  display: flex;
+  background-color: aqua;
+  border-radius: 20px;
+}
+
+.label-text {
+  border-width: 0px;
+  position: absolute;
+  left: 42px;
+  top: 164px;
+  width: 145px;
+  height: 44px;
+  display: flex
 }
