@@ -18,10 +18,54 @@
   </div>
 </div>
 
-<div class="main-label">
-  <span class="label-text">
+<div class="main-background">
+    <div *ngFor="let record of records" class="record-box">
+      <span class="doctor-icon">
+        <i class="fa fa-h-square"></i>
+      </span>
 
-  </span>
+      <span class="record-info">
+        <div>
+          <span class="record-info-icon">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span style="font-size: 5vw"> : </span>
+          <span class="record-info-style" style="font-size: 4vw; font-family: Poppins, sans-serif"><strong>Diabetes Melitus</strong>
+          </span>
+        </div>
+
+        <div>
+          <span class="record-info-icon">
+            <i class="fa fa-user-md"></i>
+          </span>
+          <span style="font-size: 5vw"> : </span>
+          <span class="record-info-style" style="font-size: 4vw; font-family: 'Poppins Light', 'Poppins Regular', 'Poppins', sans-serif">
+            dr.Laurens Hendrika
+          </span>
+        </div>
+
+        <div>
+          <span class="record-info-icon">
+            <i class="fa fa-hospital-o"></i>
+          </span>
+          <span style="font-size: 5vw"> : </span>
+          <span class="record-info-style" style="font-size: 4vw; font-family: 'Roboto Light', sans-serif">Siloam Hospital
+          </span>
+        </div>
+
+        <div>
+          <span class="record-info-icon">
+            <i class="fa fa-calendar"></i>
+          </span>
+          <span style="font-size: 5vw"> : </span>
+          <span class="record-info-style" style="font-size: 3vw; font-family: 'Poppins Light', sans-serif">3 Maret 2020 21.00
+          </span>
+        </div>
+      </span>
+
+
+    </div>
+
 </div>
 
 <div class="menu">
