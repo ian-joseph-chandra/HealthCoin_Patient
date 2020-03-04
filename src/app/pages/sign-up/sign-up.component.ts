@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,13 +18,13 @@ export class SignUpComponent implements OnInit {
   inputPassConfirm = '';
   inputCitizenId = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private api: ApiService) {
   }
 
   ngOnInit() {
   }
 
-  signUp() {
+  async signUp() {
     if (this.inputFirstName === '' ||
       this.inputBirthDate === '' ||
       this.inputEmail === '' ||
@@ -35,8 +36,11 @@ export class SignUpComponent implements OnInit {
     } else if (this.inputPass !== this.inputPassConfirm) {
       console.log('Konfirmasi password tidak sesuai!');
     } else {
-      console.log('Sign-up berhasil !');
-      this.goToLoginPage();
+      const registerMessage = await this.api.postUserRegister(
+        this.inputFirstName, this.inputLastName, this.inputBirthDate, this.inputEmail, this.inputPass);
+
+      console.log(registerMessage);
+      // this.goToLoginPage();
     }
   }
 

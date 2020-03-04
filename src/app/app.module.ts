@@ -11,6 +11,7 @@ import {UserRecoveryComponent} from './pages/user-recovery/user-recovery.compone
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RecordListComponent } from './pages/record-list/record-list.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
