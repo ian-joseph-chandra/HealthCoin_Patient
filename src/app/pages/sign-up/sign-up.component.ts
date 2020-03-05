@@ -9,14 +9,18 @@ import {ApiService} from '../../services/api.service';
 })
 export class SignUpComponent implements OnInit {
 
-  inputFirstName = '';
-  inputLastName = '';
-  inputBirthDate = '';
-  inputEmail = '';
-  inputPhoneNumber = '';
-  inputPass = '';
-  inputPassConfirm = '';
-  inputCitizenId = '';
+  inputFirstName = 'Ian';
+  inputLastName = 'Joseph';
+  inputBirthDate = '1998-04-22';
+  inputEmail = 'ianjoseph.project@gmail.com';
+  inputPhoneNumber = '12345';
+  inputPass = 'ian2204';
+  inputPassConfirm = 'ian2204';
+  inputCitizenId = '12345';
+
+  requestSent = false;
+  error = false;
+  message: string;
 
   constructor(private router: Router, private api: ApiService) {
   }
@@ -24,24 +28,36 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Check the password confirmation is correct or not. If it's correct, then process the register data.
+   */
   async signUp() {
-    if (this.inputFirstName === '' ||
-      this.inputBirthDate === '' ||
-      this.inputEmail === '' ||
-      this.inputPhoneNumber === '' ||
-      this.inputPass === '' ||
-      this.inputPassConfirm === '' ||
-      this.inputCitizenId === '') {
-      console.log('Kolom yang wajib ada yang kosong!');
-    } else if (this.inputPass !== this.inputPassConfirm) {
-      console.log('Konfirmasi password tidak sesuai!');
+    if (this.inputPass !== this.inputPassConfirm) {
+      this.error = true;
+      this.message = 'Konfirmasi password tidak sesuai!';
     } else {
-      const registerMessage = await this.api.postUserRegister(
-        this.inputFirstName, this.inputLastName, this.inputBirthDate, this.inputEmail, this.inputPass);
+      await this.sendRegisterData();
 
-      console.log(registerMessage);
-      // this.goToLoginPage();
+      // If the request is sent and there isn't any error, then go back to Login page.
+      if (this.requestSent && !this.error) {
+        this.goToLoginPage();
+      }
     }
+  }
+
+  /**
+   * Send the register data to API server and get the response. Set the error status and message according to the response.
+   */
+  async sendRegisterData() {
+    // Set status for requestSent.
+    this.requestSent = true;
+
+    // Send the data to the API server & store the response.
+    const registerResponse = await this.api.postUserRegister(
+      this.inputFirstName, this.inputLastName, this.inputBirthDate, this.inputEmail, this.inputPass);
+
+    this.error = registerResponse.error;
+    this.message = registerResponse.message;
   }
 
   goToLoginPage() {

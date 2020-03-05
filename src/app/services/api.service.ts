@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {JsonObject} from '@angular/compiler-cli/ngcc/src/packages/entry_point';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
   // domain used
   private domain = 'http://localhost:3000/';
 
@@ -15,26 +15,38 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-  async postUserRegister(firstName: any, lastName: any, birthDate: any, email: any, pass: any) {
-
-    const jsonUserRegister: JsonObject = {
-      "first_name": firstName,
-      "last_name": lastName,
-      "birth_date": birthDate,
-      "email": email,
-      "pass": pass
+  /**
+   * Send the user registration data to API server.
+   * @param firstName User's first name.
+   * @param lastName User's last name.
+   * @param birthDate User's birth date.
+   * @param email User's email.
+   * @param pass User's password.
+   */
+  async postUserRegister(firstName: any, lastName: any, birthDate: any, email: any, pass: any): Promise<any> {
+    // Prepare the JSON data to be parsed to API Server
+    const jsonUserRegister = {
+      first_name: firstName,
+      last_name: lastName,
+      birth_date: birthDate,
+      email,
+      pass
     };
 
-    let registerMessage = {};
-    await this.http.post(this.urlUserRegister, jsonUserRegister).toPromise()
-      .then(
-        (response) => {
-        registerMessage = response;
-      }, () => {
-          return registerMessage;
-        })
-      .catch((e) => {
+    // Prepare a variable to store the response from API server.
+    let registerResponse;
+
+    // Send the data to API server and store the response.
+    await this.http.post(this.urlUserRegister, jsonUserRegister).toPromise().then(
+      (apiResponse) => {
+        registerResponse = apiResponse;
+      }
+    ).catch((e) => {
         console.error('Function error: on postUserRegister => ' + e);
-      });
+      }
+    );
+
+    // Return the response.
+    return registerResponse;
   }
 }
