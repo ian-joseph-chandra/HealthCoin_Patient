@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecordListComponent implements OnInit {
 
-  records: any = Array(10).fill(0);
   constructor() { }
 
   ngOnInit() {
