@@ -9,14 +9,23 @@ import {ApiService} from '../../services/api.service';
 })
 export class SignUpComponent implements OnInit {
 
-  inputFirstName = 'Ian';
+  /*inputFirstName = 'Ian';
   inputLastName = 'Joseph';
   inputBirthDate = '1998-04-22';
   inputEmail = 'ianjoseph.project@gmail.com';
   inputPhoneNumber = '12345';
   inputPass = 'ian2204';
   inputPassConfirm = 'ian2204';
-  inputCitizenId = '12345';
+  inputCitizenId = '12345';*/
+
+  inputFirstName = '';
+  inputLastName = '';
+  inputBirthDate = '';
+  inputEmail = '';
+  inputPhoneNumber = '';
+  inputPass = '';
+  inputPassConfirm = '';
+  inputCitizenId = '';
 
   requestSent = false;
   error = false;
@@ -58,6 +67,8 @@ export class SignUpComponent implements OnInit {
 
     this.error = registerResponse.error;
     this.message = registerResponse.message;
+
+    console.log(registerResponse);
   }
 
   goToLoginPage() {
