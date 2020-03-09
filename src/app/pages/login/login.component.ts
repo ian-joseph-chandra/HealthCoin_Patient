@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +17,11 @@ export class LoginComponent implements OnInit {
   inputPass = '';
 
   showPassword: boolean;
+  requestSent = false;
+  error = false;
+  message: string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private api: ApiService) {
   }
 
   async ngOnInit() {
@@ -57,4 +61,22 @@ export class LoginComponent implements OnInit {
   goToSignUp() {
     this.router.navigate(['sign-up']);
   }
+
+/**
+ * Send the sign-up data to API server and get the response. Set the error status and message according to the response.
+ */
+
+async sendLoginData() {
+  // Set status for requestSent.
+  this.requestSent = true;
+
+  // Send the data to the API server & store the response.
+  const loginResponse = await this.api.postUserLogin(
+    this.inputEmail, this.inputPass);
+
+  this.error = loginResponse.error;
+  this.message = loginResponse.message;
+
+  console.log(loginResponse);
+}
 }

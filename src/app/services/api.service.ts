@@ -11,6 +11,7 @@ export class ApiService {
 
   // constant url List
   private urlUserRegister: string = this.domain + 'user-register';
+  private urlUserLogin: string = this.domain + 'login';
 
   constructor(private http: HttpClient) {
   }
@@ -49,4 +50,33 @@ export class ApiService {
     // Return the response.
     return registerResponse;
   }
+
+/**
+ * Send the user registration data to API server.
+ * @param email User's email.
+ * @param pass User's password.
+ */
+async postUserLogin (email: any, pass: any): Promise<any> {
+  // Prepare the JSON data to be parsed to API Server
+  const jsonUserLogin = {
+    email,
+    pass
+  };
+
+// Prepare a variable to store the response from API server.
+let loginResponse;
+
+// Send the data to API server and store the response.
+await this.http.post(this.urlUserLogin, jsonUserLogin).toPromise().then(
+  (apiResponse) => {
+    loginResponse = apiResponse;
+  }
+).catch((e) => {
+    console.error('Function error: on postUserLogin => ' + e);
+  }
+);
+
+// Return the response.
+return loginResponse;
+}
 }

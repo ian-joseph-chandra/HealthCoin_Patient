@@ -54,7 +54,7 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-  /**
+  /** 
    * Send the register data to API server and get the response. Set the error status and message according to the response.
    */
   async sendRegisterData() {
