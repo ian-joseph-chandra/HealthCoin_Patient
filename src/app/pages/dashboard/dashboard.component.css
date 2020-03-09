@@ -1,3 +1,55 @@
+.list-header {
+  height: 25%;
+  width: auto;
+}
+
+.healthcoin-text, .list-text {
+  height: auto;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-family: arial, monospace;
+}
+
+.healthcoin-text {
+  top: 20%;
+  font-size: 7vw;
+}
+
+.list-text {
+  position: relative;
+  top: 20%;
+  font-size: 5vw;
+}
+
+.dashboard-icon {
+  color: #32C8D7;
+  text-align: center;
+  font-size: 60px;
+  position: relative;
+  top: 20%;
+}
+
+.dashboard-greet {
+  position: relative;
+  top: 20%;
+  height: 40px;
+  font-family: "Roboto Medium Italic", "Roboto Regular", Roboto, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  border-width: 0px
+}
+
+.dashboard-label {
+  position: absolute;
+  left: 29px;
+  top: 401px;
+  width: 316px;
+  height: 139px;
+  background: lightblue;
+  border-width: 0px;
+}
+
 .menu {
   position: fixed;
   width: 100%;
