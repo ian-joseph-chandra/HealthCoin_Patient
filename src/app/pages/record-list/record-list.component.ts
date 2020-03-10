@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {RouterService} from '../../services/router/router.service';
 
 @Component({
   selector: 'app-record-list',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecordListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: RouterService) { }
 
   ngOnInit() {
   }
-
 }

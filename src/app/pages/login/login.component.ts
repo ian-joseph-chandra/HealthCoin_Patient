@@ -1,6 +1,6 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {ApiService} from '../../services/api.service';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../../services/api/api.service';
+import {RouterService} from '../../services/router/router.service';
 
 @Component({
   selector: 'app-login',
@@ -8,35 +8,35 @@ import {ApiService} from '../../services/api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-
-  emailDatabase = 'asdf@gmail.com';
-  passwordDatabase = 'asdf123';
-
   inputEmail = '';
   inputPass = '';
 
-  showPassword: boolean;
+  showPassword = false;
   requestSent = false;
   error = false;
   message: string;
 
-  constructor(private router: Router, private api: ApiService) {
+  constructor(public router: RouterService, private api: ApiService) {
   }
 
   async ngOnInit() {
-    this.showPassword = false;
   }
 
-  login() {
-    if (this.inputEmail === this.emailDatabase
-      && this.inputPass === this.passwordDatabase) {
-      this.goToDashboardPage();
-    } else {
-      console.log('Login failed!');
+  /**
+   * Start login activity and check error to go to home page.
+   */
+  async login() {
+    await this.sendLoginData();
+
+    // If not error, go to home page
+    if (!this.error) {
+      await this.router.goToHomePage();
     }
   }
 
+  /**
+   * Toggle for showing or hiding password.
+   */
   showPasswordToggle(): void {
     this.showPassword = !this.showPassword;
     const passFillType = document.getElementById('password');
@@ -50,33 +50,25 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  goToDashboardPage() {
-    this.router.navigate(['dashboard']);
+  /**
+   * Send the login data to API server and get the response. Set the error status and message according to the response.
+   */
+  async sendLoginData() {
+    // Set status for requestSent.
+    this.requestSent = true;
+
+    // Create JSON data of login information.
+    const loginJSON = {
+      email: this.inputEmail,
+      pass: this.inputPass
+    };
+
+    // Send the data to the API server & store the response.
+    const loginResponse = await this.api.postUserLogin(loginJSON);
+
+    this.error = loginResponse.error;
+    this.message = loginResponse.message;
+
+    console.log(loginResponse);
   }
-
-  goToUserRecovery() {
-    this.router.navigate(['user-recovery']);
-  }
-
-  goToSignUp() {
-    this.router.navigate(['sign-up']);
-  }
-
-/**
- * Send the sign-up data to API server and get the response. Set the error status and message according to the response.
- */
-
-async sendLoginData() {
-  // Set status for requestSent.
-  this.requestSent = true;
-
-  // Send the data to the API server & store the response.
-  const loginResponse = await this.api.postUserLogin(
-    this.inputEmail, this.inputPass);
-
-  this.error = loginResponse.error;
-  this.message = loginResponse.message;
-
-  console.log(loginResponse);
-}
 }

@@ -12,3 +12,32 @@ input:focus {
   width: 100vw;
   min-height: 177vw;
 }
+
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  display: flex;
+}
+
+.menu-button, .menu-button-active {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  font-size: 6vh;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.menu-button {
+  color: #32C8D7;
+}
+
+.menu-button-active {
+  background-color: #32C8D7;
+  color: white;
+}
+
+.menu-icon {
+  vertical-align: middle;
+}

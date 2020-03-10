@@ -54,7 +54,7 @@
 </div>
 
 <div class="menu">
-  <span class="menu-button">
+  <span class="menu-button" (click)="goToHomePage()">
     <i class="fa fa-home"></i>
   </span>
 
@@ -62,11 +62,11 @@
     <i class="fa fa-calendar"></i>
   </span>
 
-  <span class="menu-button">
+  <span class="menu-button" (click)="goToRecordListPage()">
     <i class="fa fa-history"></i>
   </span>
 
-  <span class="menu-button">
+  <span class="menu-button-active">
     <i class="fa fa-user-circle"></i>
   </span>
 </div>

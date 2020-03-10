@@ -9,29 +9,37 @@
       <span class="input-icon">
         <i class="fa fa-user"></i>
       </span>
-      <input class="input-fill" type="text" placeholder="Nama Depan" [(ngModel)]="inputFirstName" name="first-name">
+      <label>
+        <input class="input-fill" type="text" placeholder="Nama Depan" [(ngModel)]="inputFirstName" name="first-name">
+      </label>
     </div>
 
     <div class="input-box">
       <span class="input-icon">
         <i class="fa fa-user"></i>
       </span>
-      <input class="input-fill" type="text" placeholder="Nama Belakang" [(ngModel)]="inputLastName" name="last-name">
+      <label>
+        <input class="input-fill" type="text" placeholder="Nama Belakang" [(ngModel)]="inputLastName" name="last-name">
+      </label>
     </div>
 
     <div class="input-box">
       <span class="input-icon">
         <i class="fa fa-calendar"></i>
       </span>
-      <input class="input-fill" type="text" onfocus="this.type='date'" placeholder="Tanggal Lahir"
-             [(ngModel)]="inputBirthDate" name="birthday">
+      <label>
+        <input class="input-fill" type="text" onfocus="this.type='date'" placeholder="Tanggal Lahir"
+               [(ngModel)]="inputBirthDate" name="birthday">
+      </label>
     </div>
 
     <div class="input-box">
       <span class="input-icon">
         <i class="fa fa-envelope"></i>
       </span>
-      <input class="input-fill" type="text" placeholder="Email" [(ngModel)]="inputEmail" name="email">
+      <label>
+        <input class="input-fill" type="text" placeholder="Email" [(ngModel)]="inputEmail" name="email">
+      </label>
     </div>
 
     <div class="input-box">
@@ -39,35 +47,43 @@
         <i class="fa fa-phone"></i>
       </span>
       <span class="phone-area">+62</span>
-      <input class="input-fill" style="width: 60%; margin-left: 0" type="number" placeholder="Nomor Telepon" [(ngModel)]="inputPhoneNumber"
-             name="phone-number">
+      <label>
+        <input class="input-fill" style="width: 60%; margin-left: 0" type="number" placeholder="Nomor Telepon" [(ngModel)]="inputPhoneNumber"
+               name="phone-number">
+      </label>
     </div>
 
     <div class="input-box">
       <span class="input-icon">
         <i class="fa fa-key"></i>
       </span>
-      <input class="input-fill" type="password" placeholder="Kata Sandi" [(ngModel)]="inputPass" name="pass">
+      <label>
+        <input class="input-fill" type="password" placeholder="Kata Sandi" [(ngModel)]="inputPass" name="pass">
+      </label>
     </div>
 
     <div class="input-box">
       <span class="input-icon">
         <i class="fa fa-key"></i>
       </span>
-      <input class="input-fill" type="password" placeholder="Konfirmasi Kata Sandi" [(ngModel)]="inputPassConfirm"
-             name="pass-confirm">
+      <label>
+        <input class="input-fill" type="password" placeholder="Konfirmasi Kata Sandi" [(ngModel)]="inputPassConfirm"
+               name="pass-confirm">
+      </label>
     </div>
 
     <div class="input-box">
       <span class="input-icon">
         <i class="fa fa-id-card"></i>
       </span>
-      <input class="input-fill" type="number" placeholder="No KTP" [(ngModel)]="inputCitizenId" name="citizen-id">
+      <label>
+        <input class="input-fill" type="number" placeholder="No KTP" [(ngModel)]="inputNationalId" name="citizen-id">
+      </label>
     </div>
 
     <button type="submit"
             [disabled]="inputFirstName === '' || inputBirthDate === '' || inputEmail === '' || inputPhoneNumber === ''
-            || inputPass === '' || inputPassConfirm === '' || inputCitizenId === ''" (click)="signUp()"
+            || inputPass === '' || inputPassConfirm === '' || inputNationalId === ''" (click)="signUp()"
             class="sign-up-button">Daftar
     </button>
   </form>

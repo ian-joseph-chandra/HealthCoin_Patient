@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <div role="button" class="user-recovery-hyperlink" (click)="goToUserRecovery()">Lupa kata sandi?</div>
+  <div role="button" class="user-recovery-hyperlink" (click)="router.goToUserRecoveryPage()">Lupa kata sandi?</div>
 
   <button type="submit" [disabled]="inputEmail=='' || inputPass==''" (click)="login()" class="login-button">Masuk
   </button>
@@ -42,7 +42,7 @@
 
 <div class="sign-up">
   <span style="color: black"> Belum memiliki akun? </span>
-  <span (click)="goToSignUp()">Daftar</span>
+  <span (click)="router.goToSignUpPage()">Daftar</span>
 </div>
 
 </body>
