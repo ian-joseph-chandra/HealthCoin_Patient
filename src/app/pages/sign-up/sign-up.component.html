@@ -81,6 +81,10 @@
       </label>
     </div>
 
+    <div *ngIf="inputPass !== inputPassConfirm && inputPassConfirm !== ''" class="error-message">
+      Konfirmasi sandi tidak sama!
+    </div>
+
     <button type="submit"
             [disabled]="inputFirstName === '' || inputBirthDate === '' || inputEmail === '' || inputPhoneNumber === ''
             || inputPass === '' || inputPassConfirm === '' || inputNationalId === ''" (click)="signUp()"

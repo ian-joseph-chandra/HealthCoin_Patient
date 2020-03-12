@@ -70,22 +70,12 @@
   top: 1vw;
 }
 
-.password-box {
-  display: flex;
-  justify-content: space-between;
-  box-flex: 1;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-
-.name-box {
-  margin-top: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.error-message {
+  position: absolute;
+  color: red;
+  width: 75%;
+  left: 12.5%;
+  text-align: left;
 }
 
 .sign-up-button {
@@ -101,23 +91,15 @@
 
 .sign-up-button:disabled {
   opacity: 30%;
-}
-
-.initial-name, .last-name {
-  margin-right: 16px;
-  flex-grow: 1;
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
-  font-size: 14px;
-  padding: 24px 0 0;
-  white-space: normal;
+  border: 1px solid #00bcd4;
+  color: #00bcd4;
+  background-color: white;
 }
 
 ::placeholder {
   opacity: 50%;
 }
 
-input[type="date"]::-webkit-input-placeholder{
+input[type="date"]::-webkit-input-placeholder {
   opacity: 50%;
 }
