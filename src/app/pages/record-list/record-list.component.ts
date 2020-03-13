@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {RouterService} from '../../services/router/router.service';
 
@@ -8,8 +8,10 @@ import {RouterService} from '../../services/router/router.service';
   styleUrls: ['./record-list.component.css']
 })
 export class RecordListComponent implements OnInit {
+  records: any = Array(10).fill(0);
 
-  constructor(public router: RouterService) { }
+  constructor(public router: RouterService) {
+  }
 
   ngOnInit() {
   }

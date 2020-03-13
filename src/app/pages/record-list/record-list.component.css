@@ -9,18 +9,19 @@
   position: relative;
   width: 100%;
   text-align: center;
-  font-size: 7vw;
   font-family: arial, monospace;
 }
 
 .healthcoin-text {
   top: 20%;
   color: white;
+  font-size: 7vw;
 }
 
 .list-text {
   position: relative;
   top: 20%;
+  font-size: 5vw;
 }
 
 .search-box {
@@ -31,6 +32,10 @@
   top: 25%;
   margin: 0 auto 0 auto;
   background-color: white;
+}
+
+.main-background {
+  background-color: azure;
 }
 
 .input-icon {
@@ -52,24 +57,64 @@
   position: relative;
 }
 
-.main-label {
-  border-width: 0px;
+.record-box {
   position: relative;
   left: 10vw;
+  right: 10vw;
   top: 3vw;
   width: 80vw;
   height: 30vw;
+  margin-bottom: 12px;
   display: flex;
-  background-color: aqua;
-  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(50, 200, 215, 1);
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137)
 }
 
 .label-text {
   border-width: 0px;
-  position: absolute;
-  left: 42px;
-  top: 164px;
-  width: 145px;
-  height: 44px;
-  display: flex
+  position: fixed;
+  left: 27px;
+  top: 433px;
+  width: 321px;
+  height: 84px;
+  display: flex;
+}
+
+.input-icon {
+  width: 10%;
+  float: left;
+  font-size: 6.5vw;
+  color: rgb(79, 208, 221);
+  margin-left: 5%;
+}
+
+.doctor-icon {
+  height: 100%;
+  width: 20vw;
+  color: black;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  font-size: 20vw;
+}
+
+.record-info {
+  height: 100%;
+  width: 80%;
+}
+
+.record-info-style {
+  height: 25%;
+}
+
+.record-info-icon {
+  display: inline-block;
+  color: black;
+  font-size: 5vw;
+  width: 5vw;
 }
