@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api/api.service';
 import {RouterService} from '../../services/router/router.service';
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-login',
@@ -14,9 +15,14 @@ export class LoginComponent implements OnInit {
   showPassword = false;
   requestSent = false;
   error = false;
+  userId = '';
+
   message: string;
 
-  constructor(public router: RouterService, private api: ApiService) {
+  constructor(
+    public router: RouterService,
+    private api: ApiService,
+    private cookieService: CookieService) {
   }
 
   async ngOnInit() {
@@ -30,6 +36,7 @@ export class LoginComponent implements OnInit {
 
     // If not error, go to home page
     if (!this.error) {
+      this.cookieService.set('user-id', this.userId);
       await this.router.goToHomePage();
     }
   }
@@ -67,7 +74,10 @@ export class LoginComponent implements OnInit {
     const loginResponse = await this.api.postUserLogin(loginJSON);
 
     this.error = loginResponse.error;
-    this.message = loginResponse.message;
+    if(this.error)
+      this.message = loginResponse.message;
+    else
+      this.userId = loginResponse.user_id;
 
     console.log(loginResponse);
   }

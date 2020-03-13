@@ -12,6 +12,7 @@ import {RecordListComponent} from './pages/record-list/record-list.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './pages/home/home.component';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import {HomeComponent} from './pages/home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
