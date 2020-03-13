@@ -6,6 +6,7 @@ import {ProfileComponent} from './pages/profile/profile.component';
 import {UserRecoveryComponent} from './pages/user-recovery/user-recovery.component';
 import {RecordListComponent} from './pages/record-list/record-list.component';
 import {HomeComponent} from './pages/home/home.component';
+import {QrCodeComponent} from './pages/qr-code/qr-code.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'user-recovery', component: UserRecoveryComponent},
   {path: 'record-list', component: RecordListComponent},
+  {path: 'qr-code', component: QrCodeComponent}
 ];
 
 @NgModule({

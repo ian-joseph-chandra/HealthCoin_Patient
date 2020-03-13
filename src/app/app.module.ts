@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './pages/login/login.component';
@@ -13,6 +12,8 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './pages/home/home.component';
 import {CookieService} from 'ngx-cookie-service';
+import {QrCodeComponent} from './pages/qr-code/qr-code.component';
+import {AnQrcodeModule} from "an-qrcode";
 
 
 @NgModule({
@@ -24,13 +25,15 @@ import {CookieService} from 'ngx-cookie-service';
     UserRecoveryComponent,
     RecordListComponent,
     HomeComponent,
+    QrCodeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AnQrcodeModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, CookieService],
   bootstrap: [AppComponent]
