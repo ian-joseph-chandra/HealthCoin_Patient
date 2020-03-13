@@ -25,7 +25,7 @@ export class RouterService {
     await this.router.navigate(['home']);
   }
 
-  async goToRecordList() {
+  async goToRecordListPage() {
     await this.router.navigate(['record-list']);
   }
 

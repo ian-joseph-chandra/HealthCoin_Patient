@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
 import {ApiService} from '../../services/api/api.service';
 import {RouterService} from '../../services/router/router.service';
 
@@ -26,7 +25,7 @@ export class SignUpComponent implements OnInit {
   inputPhoneNumber = '';
   inputPass = '';
   inputPassConfirm = '';
-  inputNationalId = ''
+  inputNationalId = '';
 
   requestSent = false;
   error = false;

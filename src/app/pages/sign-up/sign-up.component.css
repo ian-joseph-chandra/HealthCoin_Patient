@@ -56,7 +56,7 @@
   float: left;
   margin-left: 5%;
   position: relative;
-  top: 1.25vw;
+  top: 1.4vw;
 }
 
 .input-fill {
@@ -90,7 +90,7 @@
 }
 
 .sign-up-button:disabled {
-  opacity: 30%;
+  opacity: 75%;
   border: 1px solid #00bcd4;
   color: #00bcd4;
   background-color: white;
