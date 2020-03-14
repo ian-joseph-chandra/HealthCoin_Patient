@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {RouterService} from '../../services/router/router.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,18 +9,9 @@ import {Router} from '@angular/router';
 
 export class ProfileComponent implements OnInit {
 
-  constructor(public router: Router) {
+  constructor(public router: RouterService) {
   }
 
   ngOnInit() {
-  }
-
-
-  async goToHomePage() {
-    await this.router.navigate(['home']);
-  }
-
-  async goToRecordListPage(){
-    await this.router.navigate(['record-list']);
   }
 }
