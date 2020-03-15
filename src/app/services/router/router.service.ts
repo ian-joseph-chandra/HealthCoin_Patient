@@ -17,7 +17,7 @@ export class RouterService {
     await this.router.navigate(['sign-up']);
   }
 
-  async goToUserRecoveryPage(){
+  async goToUserRecoveryPage() {
     await this.router.navigate(['user-recovery']);
   }
 
@@ -31,5 +31,9 @@ export class RouterService {
 
   async goToProfilePage() {
     await this.router.navigate(['profile']);
+  }
+
+  async goToQrCodePage() {
+    await this.router.navigate(['qr-code']);
   }
 }

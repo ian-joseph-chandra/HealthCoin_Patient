@@ -45,19 +45,35 @@
 
 <div class="menu">
   <span class="menu-button-active">
-    <i class="fa fa-home"></i>
+    <div class="menu-button-icon">
+      <i class="fa fa-home"></i>
+    </div>
+
+    <div class="menu-button-text">Beranda</div>
   </span>
 
-  <span class="menu-button">
-    <i class="fa fa-calendar"></i>
+  <span class="menu-button" (click)="router.goToQrCodePage()">
+    <div class="menu-button-icon">
+      <i class="fa fa-qrcode"></i>
+    </div>
+
+    <div class="menu-button-text">Kode QR</div>
   </span>
 
   <span class="menu-button" (click)="router.goToRecordListPage()">
-    <i class="fa fa-history"></i>
+    <div class="menu-button-icon">
+      <i class="fa fa-history"></i>
+    </div>
+
+    <div class="menu-button-text">Riwayat</div>
   </span>
 
   <span class="menu-button" (click)="router.goToProfilePage()">
-    <i class="fa fa-user-circle"></i>
+    <div class="menu-button-icon">
+      <i class="fa fa-user-circle"></i>
+    </div>
+
+    <div class="menu-button-text">Profil</div>
   </span>
 </div>
 </body>

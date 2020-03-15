@@ -1,5 +1,6 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterService} from '../../services/router/router.service';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import {RouterService} from '../../services/router/router.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public router: RouterService) {
+  constructor(
+    public router: RouterService,
+    private cookie: CookieService) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const userId = await this.cookie.get('user-id');
+    console.log(userId);
   }
 }

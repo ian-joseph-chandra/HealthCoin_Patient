@@ -84,8 +84,6 @@ export class LoginComponent implements OnInit {
       this.message = loginResponse.message;
     } else {
       this.userId = loginResponse.data['user-id'];
-      this.firstName = loginResponse.data['first-name'];
-      this.lastName = loginResponse.data['last-name'];
     }
 
     // console.log(loginResponse);

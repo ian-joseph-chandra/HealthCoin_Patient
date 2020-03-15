@@ -110,6 +110,8 @@
 
 .record-info-style {
   height: 25%;
+  font-size: 4vw;
+  font-family: 'Poppins Light', 'Poppins Regular', 'Poppins', sans-serif;
 }
 
 .record-info-icon {
