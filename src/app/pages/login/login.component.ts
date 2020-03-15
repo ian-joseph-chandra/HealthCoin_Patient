@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api/api.service';
 import {RouterService} from '../../services/router/router.service';
 import {CookieService} from 'ngx-cookie-service';
-import {Patient} from '../../classes/patient/patient';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +17,6 @@ export class LoginComponent implements OnInit {
 
   error: boolean;
   userId: string;
-  firstName: string;
-  lastName: string;
   message: string;
 
   constructor(
@@ -39,10 +36,7 @@ export class LoginComponent implements OnInit {
 
     // If not error, go to home page
     if (!this.error) {
-      const patient = new Patient(this.userId, this.firstName, this.lastName);
-      console.log(patient);
-
-      this.cookieService.set('user-id', this.userId);
+      this.cookieService.set('user_id', this.userId);
       await this.router.goToHomePage();
     }
   }
@@ -77,15 +71,13 @@ export class LoginComponent implements OnInit {
     };
 
     // Send the data to the API server & store the response.
-    const loginResponse = await this.api.postUserLogin(loginJSON);
+    const loginResponse = await this.api.sendPostRequest('login', loginJSON);
 
     this.error = loginResponse.error;
     if (this.error) {
       this.message = loginResponse.message;
     } else {
-      this.userId = loginResponse.data['user-id'];
+      this.userId = loginResponse.data.user_id;
     }
-
-    // console.log(loginResponse);
   }
 }

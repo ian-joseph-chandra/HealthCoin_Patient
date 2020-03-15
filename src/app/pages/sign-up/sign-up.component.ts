@@ -9,23 +9,23 @@ import {RouterService} from '../../services/router/router.service';
 })
 export class SignUpComponent implements OnInit {
 
-  /*inputFirstName = 'Ian';
+  inputFirstName = 'Ian';
   inputLastName = 'Joseph';
   inputBirthDate = '1998-04-22';
   inputEmail = 'ianjoseph.project@gmail.com';
   inputPhoneNumber = '81513127900';
   inputPass = 'ian2204';
   inputPassConfirm = 'ian2204';
-  inputNationalId = '12345';*/
+  inputNationalId = '12345';
 
-  inputFirstName = '';
+  /*inputFirstName = '';
   inputLastName = '';
   inputBirthDate = '';
   inputEmail = '';
   inputPhoneNumber = '';
   inputPass = '';
   inputPassConfirm = '';
-  inputNationalId = '';
+  inputNationalId = '';*/
 
   requestSent = false;
   error = false;
@@ -73,7 +73,7 @@ export class SignUpComponent implements OnInit {
     };
 
     // Send the data to the API server & store the response.
-    const registerResponse = await this.api.postUserRegister(registerJSON);
+    const registerResponse = await this.api.sendPostRequest('user-register', registerJSON);
 
     this.error = registerResponse.error;
     this.message = registerResponse.message;

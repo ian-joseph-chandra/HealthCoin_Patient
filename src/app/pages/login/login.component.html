@@ -6,9 +6,9 @@
 <form class="login-box">
   <div class="user-pass-input-box">
     <div class="input-box">
-        <span class="input-icon">
-          <i class="fa fa-envelope"></i>
-        </span>
+      <span class="input-icon">
+        <i class="fa fa-envelope"></i>
+      </span>
 
       <label>
         <input class="email-fill" type="email" placeholder="Email" [(ngModel)]="inputEmail" name="email">
@@ -16,9 +16,9 @@
     </div>
 
     <div class="input-box">
-        <span class="input-icon">
-          <i class="fa fa-key"></i>
-        </span>
+      <span class="input-icon">
+        <i class="fa fa-key"></i>
+      </span>
 
       <label>
         <input class="pass-fill" type="password" placeholder="Kata Sandi" [(ngModel)]="inputPass" id="password"
@@ -35,7 +35,7 @@
   </div>
 
   <div role="button" class="user-recovery-hyperlink" (click)="router.goToUserRecoveryPage()">Lupa kata sandi?</div>
-
+  <div *ngIf="error" class="error-message">{{message}}</div>
   <button type="submit" [disabled]="inputEmail=='' || inputPass==''" (click)="login()" class="login-button">
     Masuk
   </button>

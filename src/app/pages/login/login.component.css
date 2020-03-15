@@ -82,6 +82,14 @@
   margin: 2vw 0 0 12.5%;
   color: #188FFF
 }
+.error-message{
+  position: absolute;
+  color: red;
+  width: 75%;
+  left: 12.5%;
+  top: 30%;
+  text-align: left;
+}
 
 .login-button {
   text-align: center;
@@ -96,6 +104,11 @@
 
 .login-button:disabled {
   opacity: 30%;
+}
+
+.login-button:active {
+  outline: none;
+  border: none;
 }
 
 .sign-up {
