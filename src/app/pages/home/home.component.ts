@@ -12,29 +12,51 @@ import {Patient} from '../../classes/patient/patient';
 export class HomeComponent implements OnInit {
 
   userId;
+  patient: Patient;
 
   constructor(
     public router: RouterService,
     private cookie: CookieService,
-    private api: ApiService) {
+    private api: ApiService,
+    private storage: Storage) {
   }
 
   async ngOnInit() {
     await this.checkSession();
+
+    console.log('Object:\n' + this.patient);
   }
 
   async checkSession() {
-    this.userId = await this.cookie.get('user_id');
-
-    if (this.userId === '') {
+    if (!(await this.cookie.get('user_id'))) {
       await this.router.goToLoginPage();
     } else {
-      const response = await this.api.sendPostRequest('home', {user_id: this.userId});
+      this.checkStorage();
+      this.checkPatientObject();
+    }
+  }
 
-      console.log(response);
+  async checkStorage() {
+    if (!this.storage.getItem('user_id')) {
+      this.userId = await this.getDataFromCookie('user_id');
+      const response = await this.api.sendPostRequest('home', {user_id: this.userId});
       const {first_name, last_name} = response.data;
-      const patient = new Patient(this.userId, first_name, last_name);
-      console.log(patient);
+
+      this.storage.setItem('user_id', this.userId);
+      this.storage.setItem('first_name', first_name);
+      this.storage.setItem('last_name', last_name);
+    }
+  }
+
+  getDataFromCookie(key: string) {
+    return this.cookie.get(key);
+  }
+
+  checkPatientObject() {
+    if (this.patient.userId === null) {
+      this.patient.userId = this.userId;
+      this.patient.firstName = this.storage.getItem('first_name');
+      this.patient.lastName = this.storage.getItem('last_name');
     }
   }
 }
