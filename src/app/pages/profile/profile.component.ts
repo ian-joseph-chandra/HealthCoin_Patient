@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterService} from '../../services/router/router.service';
 import {ApiService} from '../../services/api/api.service';
-import {async} from '@angular/core/testing';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-profile',
@@ -10,15 +10,18 @@ import {async} from '@angular/core/testing';
 })
 
 export class ProfileComponent implements OnInit {
-  inputUserId = '1';
+  userId: string;
 
   requestSent = false;
-  userId: string;
   error = false;
   message: string;
   name: string;
+  email: string;
+  phoneNumber: string;
+  nationalId: string;
+  birthDate: string;
 
-  constructor(public router: RouterService, private api: ApiService) {
+  constructor(public router: RouterService, private api: ApiService, private cookie: CookieService) {
   }
 
   async ngOnInit() {
@@ -26,6 +29,7 @@ export class ProfileComponent implements OnInit {
   }
 
   async getProfile() {
+    this.userId = await this.cookie.get('user_id');
     await this.sendProfileData();
   }
 
@@ -35,7 +39,7 @@ export class ProfileComponent implements OnInit {
 
     // Prepare the JSON data to be parsed to API Server
     const profileQueryJSON = {
-      user_id: 1,
+      user_id: this.userId // tadi di sini user_id:1
     };
 
     // Send the data to the API server & store the response.
@@ -47,6 +51,11 @@ export class ProfileComponent implements OnInit {
       this.message = profileQueryResponse.message;
     } else {
       this.name = profileQueryResponse.data.first_name + ' ' + profileQueryResponse.data.last_name;
+      this.email = profileQueryResponse.data.email;
+      this.phoneNumber = profileQueryResponse.data.phone_number;
+      this.nationalId = profileQueryResponse.data.national_id;
+      this.birthDate = profileQueryResponse.data.birth_date;
+
       console.log(profileQueryResponse.data)
     }
   }
