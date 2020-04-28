@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.checkSession();
+    // await this.checkSession();
   }
 
   async checkSession() {

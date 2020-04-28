@@ -25,7 +25,7 @@
 .home-icon {
   color: #32C8D7;
   text-align: center;
-  font-size: 60px;
+  font-size: 15vw;
   position: relative;
   top: 20%;
 }
@@ -36,20 +36,61 @@
   font-family: "Roboto Medium Italic", "Roboto Regular", Roboto, sans-serif;
   font-size: 5vw;
   border-width: 0;
+  text-align: center;
 }
 
-.total-record {
+.home-info {
   position: relative;
-  top: 20%;
-  font-family: "Roboto Medium Italic", "Roboto Regular", Roboto, sans-serif;
-  font-size: 5vw;
+  top: 45%;
   border-width: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  display: flex;
+}
+
+.total-record-box {
+  width: 65%;
+  height: 35%;
+  text-align: left;
+  font-family:'Roboto Light', 'Roboto Regular', 'Roboto', sans-serif;
+  font-weight:300;
+  font-style: normal;
+}
+
+.total-record-number {
+  font-size: 15vw;
+}
+
+.total-record-text {
+  font-size: 5vw;
+}
+
+.date-box {
+  width: 35%;
+  height: 35%;
+  text-align: left;
+  font-size: 4vw;
+}
+
+.today-date {
+  text-align: start;
+}
+
+.today-line {
+  border-left: 1px solid #00bcd4;
+  margin-left: 5%;
+  font-size: 15vw;
+}
+
+.today-text {
+  text-align: start;
 }
 
 .history-box {
   position: relative;
   left: 10vw;
-  top:70vw;
+  top: 35vw;
   width: 80vw;
   height: 30vw;
   background-color: rgba(255, 255, 255, 1);
