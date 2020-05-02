@@ -1,49 +1,61 @@
 <body class="adjust-screen">
 
+  <div class="list-header">
+    <div class="healthcoin-text">H E A L T H C O I N</div>
 
-<div class="list-header">
-  <div class="healthcoin-text">H E A L T H C O I N</div>
+    <div class="list-text">
+      <strong>Dashboard</strong>
+    </div>
 
-  <div class="list-text">
-    <strong>Dashboard</strong>
-  </div>
+    <div class="home-icon">
+      <i class="fa fa-user-circle"></i>
+    </div>
 
-  <div class="home-icon">
-    <i class="fa fa-user-circle"></i>
-  </div>
-
-  <div class="home-greet">
-    <div style="font-family:'Roboto Medium Italic', 'Roboto Regular', 'Roboto', sans-serif;font-weight:500;
+    <div class="home-greet">
+      <div style="font-family:'Roboto Medium Italic', 'Roboto Regular', 'Roboto', sans-serif;font-weight:500;
     font-style:italic;">Hello!
+      </div>
+
+      <div style="font-family:'Roboto Light', 'Roboto Regular', 'Roboto', sans-serif;font-weight:300;
+    font-style:normal;">Ms. Laurens Hendrika
+      </div>
     </div>
 
-    <div style="font-family:'Roboto Light', 'Roboto Regular', 'Roboto', sans-serif;font-weight:300;
-    font-style:normal;">Ms. {{patient.firstName}} {{patient.lastName}}
-    </div>
-  </div>
+    <div class="home-info">
+      <span class="total-record-box">
+        <div class="total-record-number">10</div>
+        <div class="total-record-text">Total Medical Record</div>
+      </span>
 
-  <div class="total-record">
-    <div style="font-family:'Roboto Light', 'Roboto Regular', 'Roboto', sans-serif;font-weight:300;
-    font-style:normal;font-size: 10vw">10
+      <span class="date-box">
+        <div class="today-date">
+          <i class="fa fa-circle" style="color: #00bcd4"></i>
+          2020/03/31
+        </div>
+
+        <div class="today-line">
+          <i class="fa fa-line" style="color: #00bcd4"></i>
+        </div>
+
+        <div class="today-text">
+          <i class="fa fa-circle" style="color: #00bcd4"></i>
+          Now
+        </div>
+      </span>
     </div>
 
-    <div style="font-family:'Roboto Light', 'Roboto Regular', 'Roboto', sans-serif;font-weight:300;
-    font-style:normal;font-size: 10vw">Total Medical Record
-    </div>
-  </div>
-
-  <div class="history-box">
-    <div class="history-text">History</div>
-    <div>
+    <div class="history-box">
+      <div class="history-text">History</div>
+      <div>
       <span class="doctor-icon">
         <i class="fa fa-h-square"></i>
       </span>
-      <span class="record-info-style">RS. Siloam</span>
+        <span class="record-info-style">RS. Siloam</span>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="menu">
+  <div class="menu">
   <span class="menu-button-active">
     <div class="menu-button-icon">
       <i class="fa fa-home"></i>
@@ -52,7 +64,7 @@
     <div class="menu-button-text">Beranda</div>
   </span>
 
-  <span class="menu-button" (click)="router.goToQrCodePage()">
+    <span class="menu-button" (click)="router.goToQrCodePage()">
     <div class="menu-button-icon">
       <i class="fa fa-qrcode"></i>
     </div>
@@ -60,7 +72,7 @@
     <div class="menu-button-text">Kode QR</div>
   </span>
 
-  <span class="menu-button" (click)="router.goToRecordListPage()">
+    <span class="menu-button" (click)="router.goToRecordListPage()">
     <div class="menu-button-icon">
       <i class="fa fa-history"></i>
     </div>
@@ -68,14 +80,14 @@
     <div class="menu-button-text">Riwayat</div>
   </span>
 
-  <span class="menu-button" (click)="router.goToProfilePage()">
+    <span class="menu-button" (click)="router.goToProfilePage()">
     <div class="menu-button-icon">
       <i class="fa fa-user-circle"></i>
     </div>
 
     <div class="menu-button-text">Profil</div>
   </span>
-</div>
+  </div>
 </body>
 
 
