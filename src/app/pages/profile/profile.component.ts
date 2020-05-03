@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterService} from '../../services/router/router.service';
 import {ApiService} from '../../services/api/api.service';
-import {CookieService} from 'ngx-cookie-service';
+import {SessionService} from '../../services/session/session.service';
+import {LocalStorageService} from '../../services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-profile',
@@ -20,17 +21,22 @@ export class ProfileComponent implements OnInit {
   phoneNumber: string;
   nationalId: string;
   birthDate: string;
+  profileIsSet;
 
-  constructor(public router: RouterService, private api: ApiService, private cookie: CookieService) {
+  constructor(
+    public router: RouterService,
+    private api: ApiService,
+    private session: SessionService,
+    private localStorage: LocalStorageService) {
   }
 
   async ngOnInit() {
-    await this.getProfile();
-  }
+    this.userId = await this.session.checkSession();
+    this.profileIsSet = await this.localStorage.checkProfileStorage();
 
-  async getProfile() {
-    this.userId = await this.cookie.get('user_id');
-    await this.sendProfileData();
+    if (!this.profileIsSet) {
+      await this.sendProfileData();
+    }
   }
 
   async sendProfileData() {
@@ -39,11 +45,11 @@ export class ProfileComponent implements OnInit {
 
     // Prepare the JSON data to be parsed to API Server
     const profileQueryJSON = {
-      user_id: this.userId // tadi di sini user_id:1
+      user_id: this.userId
     };
 
     // Send the data to the API server & store the response.
-    const profileQueryResponse = await this.api.sendPostRequest('profile', profileQueryJSON);
+    const profileQueryResponse = await this.api.sendPostRequest('patient-profile', profileQueryJSON);
 
     this.error = profileQueryResponse.error;
 
@@ -51,12 +57,12 @@ export class ProfileComponent implements OnInit {
       this.message = profileQueryResponse.message;
     } else {
       this.name = profileQueryResponse.data.first_name + ' ' + profileQueryResponse.data.last_name;
+      this.birthDate = profileQueryResponse.data.birth_date;
       this.email = profileQueryResponse.data.email;
       this.phoneNumber = profileQueryResponse.data.phone_number;
       this.nationalId = profileQueryResponse.data.national_id;
-      this.birthDate = profileQueryResponse.data.birth_date;
 
-      console.log(profileQueryResponse.data)
+      console.log(profileQueryResponse.data);
     }
   }
 }

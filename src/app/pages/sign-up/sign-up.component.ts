@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api/api.service';
 import {RouterService} from '../../services/router/router.service';
+import {Md5} from 'ts-md5';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,27 +10,20 @@ import {RouterService} from '../../services/router/router.service';
 })
 export class SignUpComponent implements OnInit {
 
-  inputFirstName = 'Ian';
-  inputLastName = 'Joseph';
-  inputBirthDate = '1998-04-22';
-  inputEmail = 'ianjoseph.project@gmail.com';
-  inputPhoneNumber = '81513127900';
-  inputPass = 'ian2204';
-  inputPassConfirm = 'ian2204';
-  inputNationalId = '12345';
-
-  /*inputFirstName = '';
+  inputFirstName = '';
   inputLastName = '';
   inputBirthDate = '';
   inputEmail = '';
   inputPhoneNumber = '';
   inputPass = '';
   inputPassConfirm = '';
-  inputNationalId = '';*/
+  inputNationalId = '';
 
   requestSent = false;
   error = false;
   message: string;
+
+  md5 = new Md5();
 
   constructor(public router: RouterService, private api: ApiService) {
   }
@@ -68,7 +62,7 @@ export class SignUpComponent implements OnInit {
       birth_date: this.inputBirthDate,
       email: this.inputEmail,
       phone_number: this.inputPhoneNumber,
-      pass: this.inputPass,
+      pass: String(this.md5.appendStr(this.inputPass)),
       national_id: this.inputNationalId
     };
 
