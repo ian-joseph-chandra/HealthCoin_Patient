@@ -20,7 +20,11 @@ export class HomeComponent implements OnInit {
   }
 
   async ngOnInit() {
+<<<<<<< Updated upstream
     // await this.checkSession();
+=======
+    //await this.checkSession();
+>>>>>>> Stashed changes
   }
 
   async checkSession() {
