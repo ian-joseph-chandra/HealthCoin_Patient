@@ -1,7 +1,11 @@
+<<<<<<< Updated upstream
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api/api.service';
 import {RouterService} from '../../services/router/router.service';
 import {CookieService} from 'ngx-cookie-service';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-login',
@@ -9,6 +13,7 @@ import {CookieService} from 'ngx-cookie-service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+<<<<<<< Updated upstream
   inputEmail = '';
   inputPass = '';
 
@@ -80,4 +85,12 @@ export class LoginComponent implements OnInit {
       this.userId = loginResponse.data.user_id;
     }
   }
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> Stashed changes
 }

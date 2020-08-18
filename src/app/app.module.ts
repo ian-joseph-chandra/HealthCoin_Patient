@@ -15,10 +15,17 @@ import {CookieService} from 'ngx-cookie-service';
 import {QrCodeComponent} from './pages/qr-code/qr-code.component';
 import {AnQrcodeModule} from 'an-qrcode';
 
+<<<<<<< Updated upstream
+=======
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './pages/login/login.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< Updated upstream
     LoginComponent,
     SignUpComponent,
     ProfileComponent,
@@ -26,6 +33,9 @@ import {AnQrcodeModule} from 'an-qrcode';
     RecordListComponent,
     HomeComponent,
     QrCodeComponent,
+=======
+    LoginComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
