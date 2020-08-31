@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api/api.service';
 import {RouterService} from '../../services/router/router.service';
 import {CookieService} from 'ngx-cookie-service';
-import {Md5} from 'ts-md5';
 
 @Component({
   selector: 'app-login',
@@ -20,15 +19,14 @@ export class LoginComponent implements OnInit {
   userId: string;
   message: string;
 
-  md5 = new Md5();
-
   constructor(
     public router: RouterService,
     private api: ApiService,
     private cookieService: CookieService) {
   }
 
-  async ngOnInit() {}
+  async ngOnInit() {
+  }
 
   /**
    * Start login activity and check error to go to home page.
@@ -69,12 +67,11 @@ export class LoginComponent implements OnInit {
     // Create JSON data of login information.
     const loginJSON = {
       email: this.inputEmail,
-      pass: String(this.md5.appendStr(this.inputPass).end())
+      pass: this.inputPass
     };
 
-    console.log(loginJSON);
     // Send the data to the API server & store the response.
-    const loginResponse = await this.api.sendPostRequest('patient-login', loginJSON);
+    const loginResponse = await this.api.sendPostRequest('login', loginJSON);
 
     this.error = loginResponse.error;
     if (this.error) {

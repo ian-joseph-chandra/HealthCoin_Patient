@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterService} from '../../services/router/router.service';
+import {CookieService} from 'ngx-cookie-service';
 import {ApiService} from '../../services/api/api.service';
 import {Patient} from '../../classes/patient/patient';
-import {SessionService} from '../../services/session/session.service';
-import {LocalStorageService} from '../../services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -16,23 +15,26 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public router: RouterService,
-    private api: ApiService,
-    private session: SessionService,
-    private localStorage: LocalStorageService) {
+    private cookie: CookieService,
+    private api: ApiService) {
   }
 
   async ngOnInit() {
-    this.userId = await this.session.checkSession();
-    await this.localStorage.set(this.userId);
-    await this.getHomeInfo();
+    // await this.checkSession();
   }
 
-  async getHomeInfo() {
-    const response = await this.api.sendPostRequest('patient-home', {user_id: this.userId});
+  async checkSession() {
+    this.userId = await this.cookie.get('user_id');
 
-    console.log(response);
-    const {first_name, last_name} = response.data;
-    const patient = new Patient(this.userId, first_name, last_name);
-    console.log(patient);
+    if (this.userId === '') {
+      await this.router.goToLoginPage();
+    } else {
+      const response = await this.api.sendPostRequest('home', {user_id: this.userId});
+
+      console.log(response);
+      const {first_name, last_name} = response.data;
+      const patient = new Patient(this.userId, first_name, last_name);
+      console.log(patient);
+    }
   }
 }

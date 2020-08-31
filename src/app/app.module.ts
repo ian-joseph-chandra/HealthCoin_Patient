@@ -13,9 +13,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './pages/home/home.component';
 import {CookieService} from 'ngx-cookie-service';
 import {QrCodeComponent} from './pages/qr-code/qr-code.component';
-import {AnQrcodeModule} from 'an-qrcode';
-import { StorageServiceModule } from 'ngx-webstorage-service';
-import {LocalStorageService} from './services/local-storage/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +31,8 @@ import {LocalStorageService} from './services/local-storage/local-storage.servic
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    AnQrcodeModule,
-    StorageServiceModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, CookieService, LocalStorageService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
