@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {JsonObject} from '@angular/compiler-cli/ngcc/src/packages/entry_point';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class ApiService {
    * @param urlTarget URL of API route.
    * @param requestData Request data in JSON format.
    */
-  async sendPostRequest(urlTarget: string, requestData: JsonObject): Promise<any> {
+  async sendPostRequest(urlTarget: string, requestData: any): Promise<any> {
     let response;
 
     // Send the data to API server and store the response.

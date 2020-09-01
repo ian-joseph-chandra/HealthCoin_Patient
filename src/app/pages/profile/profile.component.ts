@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.userId = await this.session.checkSession();
+    // this.userId = await this.session.checkSession();
     this.profileIsSet = await this.localStorage.checkProfileStorage();
 
     if (!this.profileIsSet) {
