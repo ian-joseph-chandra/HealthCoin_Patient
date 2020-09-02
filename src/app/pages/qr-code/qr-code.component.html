@@ -1,36 +1,64 @@
 <body>
 
-<div class="menu">
-  <span class="menu-button" (click)="router.goToHomePage()">
-    <div class="menu-button-icon">
-      <i class="fa fa-home"></i>
-    </div>
+  <div class="menu">
+    <span class="menu-button" (click)="router.goToHomePage()">
+      <div class="menu-button-icon">
+        <i class="fa fa-home"></i>
+      </div>
 
-    <div class="menu-button-text">Beranda</div>
-  </span>
+      <div class="menu-button-text">Beranda</div>
+    </span>
 
-  <span class="menu-button-active">
-    <div class="menu-button-icon">
-      <i class="fa fa-qrcode"></i>
-    </div>
+    <span class="menu-button-active">
+      <div class="menu-button-icon">
+        <i class="fa fa-qrcode"></i>
+      </div>
 
-    <div class="menu-button-text">Kode QR</div>
-  </span>
+      <div class="menu-button-text">Kode QR</div>
+    </span>
 
-  <span class="menu-button" (click)="router.goToRecordListPage()">
-    <div class="menu-button-icon">
-      <i class="fa fa-history"></i>
-    </div>
+    <span class="menu-button" (click)="router.goToRecordListPage()">
+      <div class="menu-button-icon">
+        <i class="fa fa-history"></i>
+      </div>
 
-    <div class="menu-button-text">Riwayat</div>
-  </span>
+      <div class="menu-button-text">Riwayat</div>
+    </span>
 
-  <span class="menu-button" (click)="router.goToProfilePage()">
-    <div class="menu-button-icon">
-      <i class="fa fa-user-circle"></i>
-    </div>
+    <span class="menu-button" (click)="router.goToProfilePage()">
+      <div class="menu-button-icon">
+        <i class="fa fa-user-circle"></i>
+      </div>
 
-    <div class="menu-button-text">Profil</div>
-  </span>
-</div>
+      <div class="menu-button-text">Profil</div>
+    </span>
+  </div>
+
+
+  <!-- Fallback for iOS PWA -->
+  <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
+
+  <!-- Trigger the file input -->
+  <button (click)="captureImage()">
+    Capture Image
+  </button>
+
+  <button (click)="startScan()">
+    Start scan
+  </button>
+
+  <button (click)="reset()"  *ngIf="scanResult">
+    Reset
+  </button>
+
+  <!-- Shows our camera stream -->
+  <video #video [hidden]="!scanActive" width="100%" height="100%"></video>
+
+  <!-- Used to render the camera stream images -->
+  <canvas #canvas hidden></canvas>
+
+  <!-- Stop our scanner preview if active -->
+  <button (click)="stopScan()" *ngIf="scanActive">
+    Stop scan
+  </button>
 </body>
