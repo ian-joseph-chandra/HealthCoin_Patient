@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RouterService} from '../../services/router/router.service';
 import {CookieService} from 'ngx-cookie-service';
 import {ApiService} from '../../services/api/api.service';
-import {Patient} from '../../classes/patient/patient';
+import {Patient} from '../../model/patient/patient';
 
 @Component({
   selector: 'app-home',
