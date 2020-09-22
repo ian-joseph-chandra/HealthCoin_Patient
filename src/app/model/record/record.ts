@@ -5,6 +5,7 @@ export class Record {
   private _hospital_code: string;
   private _contact_address: string;
   private _record_time: Date;
+  private _disease_name: string;
   private _diagnose_info: string;
 
   constructor() {
@@ -24,6 +25,14 @@ export class Record {
 
   set patient_id(value: number) {
     this._patient_id = value;
+  }
+
+  get disease_name(): string {
+    return this._disease_name;
+  }
+
+  set disease_name(value: string) {
+    this._disease_name = value;
   }
 
   get doctor_id(): number {
