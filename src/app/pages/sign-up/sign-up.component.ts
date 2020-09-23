@@ -10,14 +10,23 @@ import {Md5} from 'ts-md5';
 })
 export class SignUpComponent implements OnInit {
 
-  inputFirstName = '';
-  inputLastName = '';
+  // inputFirstName = '';
+  // inputLastName = '';
+  // inputBirthDate = '';
+  // inputEmail = '';
+  // inputPhoneNumber = '';
+  // inputPass = '';
+  // inputPassConfirm = '';
+  // inputNationalId = '';
+
+  inputFirstName = 'Josh';
+  inputLastName = 'Frederich';
   inputBirthDate = '';
-  inputEmail = '';
-  inputPhoneNumber = '';
-  inputPass = '';
-  inputPassConfirm = '';
-  inputNationalId = '';
+  inputEmail = 'bungmontana@gmail.com';
+  inputPhoneNumber = '87777281147';
+  inputPass = '12345678';
+  inputPassConfirm = '12345678';
+  inputNationalId = '12345678';
 
   requestSent = false;
   error = false;
@@ -44,6 +53,8 @@ export class SignUpComponent implements OnInit {
       // If the request is sent and there isn't any error, then go back to Login page.
       if (this.requestSent && !this.error) {
         await this.router.goToLoginPage();
+      } else {
+        console.log(this.message);
       }
     }
   }
@@ -62,13 +73,14 @@ export class SignUpComponent implements OnInit {
       birth_date: this.inputBirthDate,
       email: this.inputEmail,
       phone_number: this.inputPhoneNumber,
-      pass: String(this.md5.appendStr(this.inputPass)),
+      pass: this.md5.appendStr(this.inputPass).end(),
       national_id: this.inputNationalId
     };
 
     // Send the data to the API server & store the response.
-    const registerResponse = await this.api.sendPostRequest('user-register', registerJSON);
+    const registerResponse = await this.api.sendPostRequest('patient-register', registerJSON);
 
+    console.log(registerResponse);
     this.error = registerResponse.error;
     this.message = registerResponse.message;
   }

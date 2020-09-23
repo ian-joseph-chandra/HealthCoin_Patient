@@ -1,12 +1,15 @@
+import {User} from '../user/user';
+import {Hospital} from '../hospital/hospital';
+
 export class Record {
   private _record_id: number;
-  private _patient_id: number;
-  private _doctor_id: number;
-  private _hospital_code: string;
-  private _contact_address: string;
+  private _patient_id: User;
+  private _doctor_id: User;
+  private _hospital_code: Hospital;
+  private _contract_address: string;
   private _record_time: Date;
   private _disease_name: string;
-  private _diagnose_info: string;
+  private _diagnostic_detail: string;
 
   constructor() {
   }
@@ -19,13 +22,15 @@ export class Record {
     this._record_id = value;
   }
 
-  get patient_id(): number {
+
+  get patient_id(): User {
     return this._patient_id;
   }
 
-  set patient_id(value: number) {
+  set patient_id(value: User) {
     this._patient_id = value;
   }
+
 
   get disease_name(): string {
     return this._disease_name;
@@ -35,28 +40,28 @@ export class Record {
     this._disease_name = value;
   }
 
-  get doctor_id(): number {
+  get doctor_id(): User {
     return this._doctor_id;
   }
 
-  set doctor_id(value: number) {
+  set doctor_id(value: User) {
     this._doctor_id = value;
   }
 
-  get hospital_code(): string {
+  get hospital_code(): Hospital {
     return this._hospital_code;
   }
 
-  set hospital_code(value: string) {
+  set hospital_code(value: Hospital) {
     this._hospital_code = value;
   }
 
-  get contact_address(): string {
-    return this._contact_address;
+  get contract_address(): string {
+    return this._contract_address;
   }
 
-  set contact_address(value: string) {
-    this._contact_address = value;
+  set contract_address(value: string) {
+    this._contract_address = value;
   }
 
   get record_time(): Date {
@@ -67,11 +72,11 @@ export class Record {
     this._record_time = value;
   }
 
-  get diagnose_info(): string {
-    return this._diagnose_info;
+  get diagnostic_detail(): string {
+    return this._diagnostic_detail;
   }
 
-  set diagnose_info(value: string) {
-    this._diagnose_info = value;
+  set diagnostic_detail(value: string) {
+    this._diagnostic_detail = value;
   }
 }
