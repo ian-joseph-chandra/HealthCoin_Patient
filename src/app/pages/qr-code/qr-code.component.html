@@ -1,5 +1,4 @@
 <body>
-
   <div class="menu">
     <span class="menu-button" (click)="router.goToHomePage()">
       <div class="menu-button-icon">
@@ -14,7 +13,7 @@
         <i class="fa fa-qrcode"></i>
       </div>
 
-      <div class="menu-button-text">Kode QR</div>
+      <div class="menu-button-text">Pindai QR</div>
     </span>
 
     <span class="menu-button" (click)="router.goToRecordListPage()">
@@ -37,15 +36,6 @@
 
   <!-- Fallback for iOS PWA -->
   <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
-
-  <!-- Trigger the file input -->
-  <button (click)="captureImage()">
-    Capture Image
-  </button>
-
-  <button (click)="startScan()">
-    Start scan
-  </button>
 
   <button (click)="reset()"  *ngIf="scanResult">
     Reset

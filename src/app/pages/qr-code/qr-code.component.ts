@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {RouterService} from '../../services/router/router.service';
 import jsQR from 'jsqr';
+import {ApiService} from '../../services/api/api.service';
 
 @Component({
   selector: 'app-qr-code',
@@ -18,17 +19,21 @@ export class QrCodeComponent implements OnInit {
   scanActive = false;
   scanResult = null;
 
-  constructor(public router: RouterService) {
+  userId = 3;
+
+  constructor(public router: RouterService, private apiService: ApiService) {
   }
 
   ngOnInit(): void {
   }
 
   // tslint:disable-next-line:use-lifecycle-interface
-  ngAfterViewInit() {
+  async ngAfterViewInit() {
     this.canvasElement = this.canvas.nativeElement;
     this.canvasContext = this.canvasElement.getContext('2d');
     this.videoElement = this.video.nativeElement;
+
+    await this.startScan();
   }
 
   reset() {
@@ -44,6 +49,7 @@ export class QrCodeComponent implements OnInit {
     this.videoElement.srcObject = await navigator.mediaDevices.getUserMedia({
       video: {facingMode: 'environment'}
     });
+
     // Required for Safari
     this.videoElement.setAttribute('playsinline', true);
 
@@ -75,10 +81,10 @@ export class QrCodeComponent implements OnInit {
         inversionAttempts: 'dontInvert'
       });
 
+      // Send the token access to the API
       if (code) {
-        this.scanActive = false;
         this.scanResult = code.data;
-        console.log(this.scanResult);
+        await this.sendAccessPermit(this.scanResult);
       } else {
         if (this.scanActive) {
           requestAnimationFrame(this.scan.bind(this));
@@ -89,16 +95,12 @@ export class QrCodeComponent implements OnInit {
     }
   }
 
-  captureImage() {
-    this.fileinput.nativeElement.click();
-  }
-
-  handleFile(files: FileList) {
+  async handleFile(files: FileList) {
     const file = files.item(0);
 
     const img = new Image();
 
-    img.onload = () => {
+    img.onload = async () => {
       this.canvasContext.drawImage(img, 0, 0, this.canvasElement.width, this.canvasElement.height);
       const imageData = this.canvasContext.getImageData(
         0,
@@ -112,9 +114,35 @@ export class QrCodeComponent implements OnInit {
 
       if (code) {
         this.scanResult = code.data;
-        console.log(this.scanResult);
+        await this.sendAccessPermit(this.scanResult);
       }
     };
     img.src = URL.createObjectURL(file);
+  }
+
+  async sendAccessPermit(tokenAccess) {
+    const JSON = {
+      patient_id: this.userId,
+      token_access: tokenAccess
+    }
+
+    const response = await this.apiService.sendPostRequest('give-access', JSON)
+
+    console.log(response)
+    if (response.message['access-permit-status']){
+      this.stopScan()
+    }
+  }
+  //
+  // async checkConnectionStatus(token) {
+  //   const JSON = {
+  //     token_access: token,
+  //   };
+  //
+  //   for()
+  // }
+
+  delay(ms: number) {
+    return new Promise(r => setTimeout(r, ms));
   }
 }

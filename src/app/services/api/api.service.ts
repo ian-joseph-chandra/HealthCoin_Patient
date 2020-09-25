@@ -7,7 +7,9 @@ import {HttpClient} from '@angular/common/http';
 export class ApiService {
 
   // domain used
-  private domain = 'http://localhost:3000/';
+  // private domain = 'http://localhost:3000/';
+  // private domain = 'http://192.168.18.6:3000/';
+  private domain = 'http://192.168.42.236:3000/';
 
   constructor(private http: HttpClient) {
   }
